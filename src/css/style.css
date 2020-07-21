@@ -1,3 +1,17 @@
 body {
     background-color: #33322E;
+    color: #ffffff;
+}
+
+.navbar,footer {
+    background-color: #00a8b1;
+}
+
+.fab{
+    font-size: 28px;
+}
+
+.fab:hover{
+    color: #33322E;
+    cursor: pointer;
 }
