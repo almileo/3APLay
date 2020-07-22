@@ -8,11 +8,6 @@ footer {
   background-color: #00a8b1;
 }
 
-.futer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
 
 #principal {
   margin-top: 80px;
@@ -47,12 +42,22 @@ footer {
   color: white;
 }
 
-.txtModAdmin{
+.txtModAdmin {
     color: black;
 }
 
 .pantallaComp {
   height: 100vh;
+}
+
+.botonRepro{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.botonRepro:hover{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -66,4 +71,6 @@ footer {
     position: absolute;
     z-index: -1;
   }
+
+  
 }
