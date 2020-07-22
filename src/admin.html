@@ -46,7 +46,7 @@
     </nav>
   </header>
 
-  <main class="container noPadd">
+  <main class="container noPadd pantallaComp">
     <section class="ubica">
         <div class="row noMarg">
             <div class="col-9 text-center">
@@ -81,9 +81,9 @@
                     <td>jurassic-park.jpg</td>
                     <td>Si</td>
                     <td>
-                        <button class="btn btn-outline-primary" onclick=""><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-outline-warning my-1" onclick=""><i class="fas fa-star"></i></i></button>
-                        <button class="btn btn-outline-danger" onclick="" id=""><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn btn-outline-primary" onclick="" id="editar"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-outline-warning my-1" onclick="" id="favorito"><i class="fas fa-star"></i></i></button>
+                        <button class="btn btn-outline-danger" onclick="" id="borrar"><i class="fas fa-trash-alt"></i></button>
                     </td>
                 </tr>
                 </tbody>
@@ -91,6 +91,55 @@
         </article>
     </section>
 </main>
+
+<!-- Modal -->
+<div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title txtModAdmin" id="modalLabel">Agregar nueva película/serie</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="formAgregar" onsubmit="guardarAgregar(event)">
+                <div class="form-group">
+                    <label class="txtModAdmin">Código</label>
+                    <input class="form-control" type="number" id="codigoAgregar" onblur="codigoAgregar(this)"
+                        placeholder="ej: 1">
+                </div>
+                <div class="form-group">
+                    <label class="txtModAdmin">Nombre</label>
+                    <input class="form-control" type="text" id="nombreAgregar" onblur="nombreAgregar(this)"
+                        placeholder="ej: Jurassic Park">
+                </div>
+                <div class="form-group">
+                    <label class="txtModAdmin">Categoría</label>
+                    <label for="">Categoría</label>
+                    <input class="form-control" type="text" id="categoriaAgregar"
+                        onblur="categoriaAgregar(this)" placeholder="ej: Acción">
+                </div>
+                <div class="form-group">
+                    <label class="txtModAdmin">Descripción</label>
+                    <input class="form-control" type="text" id="descripcionAgregar"
+                        onblur="descripcionAgregar(this)" placeholder="ej: Película de dinosaurios">
+                </div>
+                <div class="form-group">
+                    <label class="txtModAdmin">Imagen</label>
+                    <input class="form-control" type="text" id="imagenAgregar" onblur="imagenAgregar(this)"
+                        placeholder="ej: jurassic-park.jpg">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer ">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+</div>
+</div>
 
   <footer class="text-center py-3 futer">
     <div class="container">

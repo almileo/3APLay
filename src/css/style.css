@@ -1,47 +1,69 @@
 body {
-    background-color: #33322E;
-    color: #ffffff;
+  background-color: #33322e;
+  color: #ffffff;
 }
 
-.navbar,footer {
-    background-color: #00a8b1;
+.navbar,
+footer {
+  background-color: #00a8b1;
 }
 
-.futer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.futer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 #principal {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
-.fab{
-    font-size: 30px;
-    color: #ffffff;
-    opacity: 0.8;
+.fab {
+  font-size: 30px;
+  color: #ffffff;
+  opacity: 0.8;
 }
 
-.fab:hover{
-    color: #33322E;
-    font-size: 32px;
-    opacity: 1;
+.fab:hover {
+  color: #33322e;
+  font-size: 32px;
+  opacity: 1;
 }
 
-.noPadd{
-    padding: 0;
+.noPadd {
+  padding: 0;
 }
 
-.noMarg{
-    margin: 0;
+.noMarg {
+  margin: 0;
 }
 
-.ubica{
+.ubica {
+  position: relative;
+  top: 6rem;
+}
+
+.txtPagAdmin {
+  color: white;
+}
+
+.txtModAdmin{
+    color: black;
+}
+
+.pantallaComp {
+  height: 100vh;
+}
+
+@media only screen and (min-width: 1025px) {
+  .txtDetPel {
     position: relative;
-    top: 6rem;
-}
+    top: 2rem;
+    left: 1rem;
+  }
 
-.txtPagAdmin{
-    color: white;
+  .fondoDetPel {
+    position: absolute;
+    z-index: -1;
+  }
 }
