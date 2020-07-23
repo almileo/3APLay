@@ -22,3 +22,7 @@ body {
     font-size: 32px;
     opacity: 1;
 }
+
+.formOpac{
+    background-color: rgba(0, 0, 0, 0.5);
+}
