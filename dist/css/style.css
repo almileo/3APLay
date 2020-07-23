@@ -29,3 +29,16 @@ body {
     opacity: 1;
 }
 
+.fondoOscuro {
+    text-shadow: 
+        0 0 5px #0F0F0F,
+        0 0 10px #0F0F0F,
+        0 0 20px #0F0F0F,
+        0 0 40px #0F0F0F,
+        0 0 80px #0F0F0F,
+        0 0 90px #0F0F0F,
+        0 0 100px #0F0F0F,
+        0 0 150px #0F0F0F;
+}
+
+
