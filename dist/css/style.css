@@ -13,6 +13,12 @@ body {
     background-color: #00a8b1;
 }
 
+.futer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 #principal {
     margin-top: 80px;
 }
@@ -50,4 +56,21 @@ body {
 
 .btn-slider:hover {
     color: #33322E;
+}
+
+.noPadd{
+    padding: 0;
+}
+
+.noMarg{
+    margin: 0;
+}
+
+.ubica{
+    position: relative;
+    top: 6rem;
+}
+
+.txtPagAdmin{
+    color: white;
 }
