@@ -29,3 +29,8 @@ body {
     opacity: 1;
 }
 
+@media (max-width: 576px){
+    #tituloError{
+        font-size: xx-large;
+    }
+}
