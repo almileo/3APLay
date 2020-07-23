@@ -75,9 +75,25 @@ body {
     color: white;
 }
 
+.imgAccion {
+    height: 2%;
+}
+
+/* MEDIA QUERIES */
 @media (max-width: 576px){
     #tituloError{
         font-size: xx-large;
     }
 
+    .fondoOscuro {
+        font-size: 25px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .btn-slider {
+        font-size: 10px;
+    }
 }
+
+
