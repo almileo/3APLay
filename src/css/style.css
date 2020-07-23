@@ -11,6 +11,7 @@ body {
     margin-top: 80px;
 }
 
+/* REDES SOCIALES */
 .fab{
     font-size: 30px;
     color: #ffffff;
@@ -23,6 +24,7 @@ body {
     opacity: 1;
 }
 
+/* SLIDER */
 .fondoOscuro {
     text-shadow: 
         0 0 5px #0F0F0F,
@@ -35,3 +37,11 @@ body {
         0 0 150px #0F0F0F;
 }
 
+.btn-slider {
+    background-color: #00a8b1;
+    color: white;
+}
+
+.btn-slider:hover {
+    color: #33322E;
+}
