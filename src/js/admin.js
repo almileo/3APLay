@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "../css/style.css";
 import Pelicula from "./pelicula.js";
-import $ from "jquery"
+import $ from "jquery";
 
 let peliculas = [];
 let codigo = document.getElementById("codigoAgregar");
@@ -67,8 +67,8 @@ function leerPeliculas() {
   if (localStorage.length > 0) {
     let _peliculas = JSON.parse(localStorage.getItem("keyPelicula"));
 
-    if(peliculas.length == 0){
-        peliculas = _peliculas;
+    if (peliculas.length == 0) {
+      peliculas = _peliculas;
     }
     //borrar filas
     borrarFila();
@@ -93,7 +93,7 @@ function dibujarFila(_peliculas) {
         <td>
             <button class="btn btn-outline-primary" onclick="" id="editar"><i class="fas fa-edit"></i></button>
             <button class="btn btn-outline-warning my-1" onclick="" id="favorito"><i class="fas fa-star"></i></i></button>
-            <button class="btn btn-outline-danger" onclick="" id="borrar"><i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
 
@@ -101,11 +101,23 @@ function dibujarFila(_peliculas) {
   }
 }
 
-function borrarFila(){
-    let tbody = document.getElementById("listaPeliculas");
-    if(tbody.children.length > 0){
-        while(tbody.firstChild){
-            tbody.removeChild(tbody.firstChild);
-        }
-    }  
+function borrarFila() {
+  let tbody = document.getElementById("listaPeliculas");
+  if (tbody.children.length > 0) {
+    while (tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild);
+    }
+  }
 }
+
+window.eliminarPelicula = function (movie) {
+  let arregloFiltrado = peliculas.filter(function (item) {
+    return item.codigo != movie.id;
+  });
+
+  localStorage.setItem("keyPelicula", JSON.stringify(arregloFiltrado));
+  peliculas = arregloFiltrado;
+  leerPeliculas();
+
+  console.log(arregloFiltrado);
+};
