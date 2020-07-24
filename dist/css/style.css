@@ -14,8 +14,16 @@ footer {
   background-color: #00a8b1;
 }
 
+
+.futer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 #principal {
   margin-top: 80px;
+
 }
 
 .fab {
@@ -45,6 +53,99 @@ footer {
 
 .txtPagAdmin {
   color: white;
+}
+
+/* REDES SOCIALES */
+.fab {
+    font-size: 30px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.fab:hover {
+    color: #33322E;
+    font-size: 32px;
+    opacity: 1;
+}
+
+/* SLIDER */
+.fondoOscuro {
+    text-shadow: 
+        0 0 5px #0F0F0F,
+        0 0 10px #0F0F0F,
+        0 0 20px #0F0F0F,
+        0 0 40px #0F0F0F,
+        0 0 80px #0F0F0F,
+        0 0 90px #0F0F0F,
+        0 0 100px #0F0F0F,
+        0 0 150px #0F0F0F;
+}
+
+.btn-slider {
+    background-color: #00a8b1;
+    color: white;
+    width: 150px;
+    height: 40px;
+}
+
+.btn-slider:hover {
+    color: #33322E;
+}
+
+.noPadd {
+    padding: 0;
+}
+
+.noMarg {
+    margin: 0;
+}
+
+.ubica {
+    position: relative;
+    top: 6rem;
+}
+
+.txtPagAdmin {
+    color: white;
+}
+
+/* IMAGENES */
+.rounded {
+    opacity: 0.6;
+    position: relative;
+}
+
+.rounded:hover {
+    opacity: 1;
+    transition: all .5s ease-in-out;
+    top: -5px;
+    right: 5px;
+    box-shadow: 5px 6px 7px 0px #00A8B1;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 576px) {
+    #tituloError {
+        font-size: xx-large;
+    }
+
+    .fondoOscuro {
+        font-size: 25px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .btn-slider {
+        font-size: 10px;
+    }
+
+    .titulo {
+        font-size: small;
+    }
+
+    .fab {
+        font-size: 25px;
+    }
 }
 
 .txtModAdmin {
@@ -85,4 +186,16 @@ footer {
 }
 
 
+.formOpac{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.loginRelative{
+    position: relative;
+    top: 60px;
+}
 
