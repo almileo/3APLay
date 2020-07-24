@@ -46,6 +46,8 @@ body {
 .btn-slider {
     background-color: #00a8b1;
     color: white;
+    width: 150px;
+    height: 40px;
 }
 
 .btn-slider:hover {
