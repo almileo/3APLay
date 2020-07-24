@@ -173,3 +173,15 @@ footer {
 }
 
 
+.formOpac{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.loginRelative{
+    position: relative;
+    top: 60px;
+}
