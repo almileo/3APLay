@@ -69,8 +69,18 @@ body {
     color: white;
 }
 
-.imgAccion {
-    height: 2%;
+/* IMAGENES */
+.rounded {
+    opacity: 0.6;
+    position: relative;
+}
+
+.rounded:hover {
+    opacity: 1;
+    transition: all .5s ease-in-out;
+    top: -5px;
+    right: 5px;
+    box-shadow: 5px 6px 7px 0px #00A8B1;
 }
 
 /* MEDIA QUERIES */
