@@ -13,7 +13,7 @@ body {
     background-color: #00a8b1;
 }
 
-.futer{
+.futer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -24,13 +24,13 @@ body {
 }
 
 /* REDES SOCIALES */
-.fab{
+.fab {
     font-size: 30px;
     color: #ffffff;
     opacity: 0.8;
 }
 
-.fab:hover{
+.fab:hover {
     color: #33322E;
     font-size: 32px;
     opacity: 1;
@@ -58,20 +58,20 @@ body {
     color: #33322E;
 }
 
-.noPadd{
+.noPadd {
     padding: 0;
 }
 
-.noMarg{
+.noMarg {
     margin: 0;
 }
 
-.ubica{
+.ubica {
     position: relative;
     top: 6rem;
 }
 
-.txtPagAdmin{
+.txtPagAdmin {
     color: white;
 }
 
@@ -90,8 +90,8 @@ body {
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 576px){
-    #tituloError{
+@media (max-width: 576px) {
+    #tituloError {
         font-size: xx-large;
     }
 
@@ -104,6 +104,18 @@ body {
     .btn-slider {
         font-size: 10px;
     }
+
+    .titulo {
+        font-size: small;
+    }
+
+    .fab {
+        font-size: 25px;
+    }
 }
+
+
+
+
 
 
