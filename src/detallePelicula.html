@@ -1,100 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3A play!</title>
+    <meta
+      name="author"
+      content="Leonardo Almirón, José Antonio Burgos, Agustin Faciano, Javier Quevedo"
+    />
+    <meta
+      name="keywords"
+      content="peliculas, streaming, pagina, videos, series"
+    />
+    <meta name="description" content="Página de películas" />
+    <link rel="icon" href="img/streaming.png" />
+    <script
+      src="https://kit.fontawesome.com/867f1193c1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3A play!</title>
-  <meta name="author" content="Leonardo Almirón, José Antonio Burgos, Agustin Faciano, Javier Quevedo">
-  <meta name="keywords" content="peliculas, streaming, pagina, videos, series">
-  <meta name="description" content="Página de películas">
-  <link rel="icon" href="img/streaming.png">
-  <script src="https://kit.fontawesome.com/867f1193c1.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="img/streaming-difuminado.png" width="57"
-            class="d-inline-block align-center" alt="Logo" loading="lazy" title="Inicio">
-          3A Play!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-1">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item mx-1">
-              <a class="nav-link" href="contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item mx-1">
-              <a class="nav-link" href="acercaDeNosotros.html">Acerca de...</a>
-            </li>
-            <li class="nav-item mx-1">
-              <a class="nav-link" href="registro.html">Registro</a>
-            </li>
-            <li class="nav-item mx-1">
-              <a class="nav-link" href="login.html"><i class="fas fa-user mr-2"></i>Login</a>
-            </li>
-          </ul>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><img
+              src="img/streaming-difuminado.png"
+              width="57"
+              class="d-inline-block align-center"
+              alt="Logo"
+              loading="lazy"
+              title="Inicio"
+            />
+            3A Play!</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item mx-1">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item mx-1">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item mx-1">
+                <a class="nav-link" href="acercaDeNosotros.html"
+                  >Acerca de...</a
+                >
+              </li>
+              <li class="nav-item mx-1">
+                <a class="nav-link" href="registro.html">Registro</a>
+              </li>
+              <li class="nav-item mx-1">
+                <a class="nav-link" href="login.html"
+                  ><i class="fas fa-user mr-2"></i>Login</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+    </header>
+
+    <main class="pantallaComp">
+      <section id="principal" class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 noPadd">
+            <img
+              src="img/peliculas/jurassicpark.jpg"
+              alt="foto Jack Reacher"
+              class="w-100 fondoDetPel"
+            />
+          </div>
+          <article
+            class="col-sm-11 mb-2"
+          >
+            <h3 class="display-4" id="tituloDetPeli">Jack Reacher</h3>
+            <p class="lead" id="descripcionDetPeli">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem itaque, nihil ab eos nesciunt labore? Nemo itaque,
+              beatae et praesentium blanditiis dolorum corporis reiciendis ab
+              accusamus hic quo consectetur at dolore nobis fuga, necessitatibus
+              culpa officia ex maiores! Eaque tempore error, at iusto ad sunt
+              delectus facere dolore !
+            </p>
+            <button class="btn btn-primary" id="repro"><a href="error404.html" class="botonRepro"><i class="far fa-play-circle"></i> Reproducir</a></button>
+            <button class="btn btn-primary" id="descarga"><a href="error404.html" class="botonRepro"><i class="fas fa-download"></i> Descargar</a></button>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center py-3 ">
+      <div class="container">
+        <a href="https://www.facebook.com/" target="_blank"
+          ><i class="fab fa-facebook-square"></i
+        ></a>
+        <a href="https://www.instagram.com/" target="_blank"
+          ><i class="fab fa-instagram mx-2"></i
+        ></a>
+        <a href="https://twitter.com/" target="_blank"
+          ><i class="fab fa-twitter-square"></i
+        ></a>
+        <p class="lead mt-3 text-white">&copy; Todos los derechos reservados</p>
       </div>
-    </nav>
-  </header>
-
-  <main class="container">
-    <section id="principal">
-      <p class="py-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem itaque, nihil ab eos nesciunt
-        labore? Nemo
-        itaque, beatae et praesentium blanditiis dolorum corporis reiciendis ab accusamus hic quo consectetur at dolore
-        nobis fuga, necessitatibus culpa officia ex maiores! Eaque tempore error, at iusto ad sunt delectus facere
-        dolore iste a numquam accusamus recusandae? Quam quo blanditiis maiores consectetur veritatis consequatur vitae
-        distinctio veniam sint fugiat! Dicta fugiat cum praesentium, beatae sint a exercitationem quis laboriosam vel
-        rerum delectus quidem commodi nesciunt! Excepturi aperiam facilis quos blanditiis amet aliquam nihil quam
-        consequatur, at, earum, maiores rem fugit asperiores repellendus sed quibusdam nobis quia! Quas facilis,
-        laboriosam, sequi sit nobis, odio quae repudiandae veniam nesciunt porro perferendis at nam labore quibusdam ad!
-        Maiores quasi, veniam qui eaque exercitationem nobis similique fugit tempora id temporibus enim quibusdam
-        fugiat, aliquam incidunt laborum harum distinctio minus iure quis rem. Voluptatibus id commodi officia sequi
-        quidem dicta possimus. Ducimus, saepe? Assumenda quibusdam ipsa libero ea aliquid, officiis praesentium
-        voluptatibus blanditiis voluptatum non eius veritatis iure odit vel debitis iste ut repudiandae, rem vero,
-        recusandae optio necessitatibus aperiam exercitationem qui. Sit eveniet officia quae possimus repudiandae beatae
-        tempora perferendis harum velit molestias est voluptas nam eos inventore tempore accusantium, quasi deleniti
-        modi? Excepturi fugit delectus ad, soluta ipsum corrupti similique eaque ea mollitia, sit dolores ipsa
-        laboriosam hic modi minus, laborum quaerat optio. Consequuntur nisi dignissimos molestias assumenda quas eos
-        expedita dolore sint animi odio! Illum, magnam. Nostrum corporis voluptates ad cum ut. Perspiciatis nobis
-        praesentium quas accusantium, reiciendis dolor reprehenderit quos rem ipsam inventore placeat fuga eos, tenetur
-        facere minus error molestiae dicta corporis. Unde voluptatibus quo eaque soluta. Dolor quidem fugit commodi
-        quisquam reprehenderit suscipit ipsum, ipsam nostrum iusto impedit ut consequatur omnis facere fuga voluptatem
-        numquam laboriosam enim tempore reiciendis repellendus quo sint error pariatur ratione. Explicabo, accusantium
-        labore a voluptate accusamus, amet laudantium cumque ipsam, natus illum eius qui perferendis animi nihil? Quo
-        velit ut est laborum deserunt recusandae expedita porro placeat? Ut voluptatum esse perferendis facere ullam
-        repellendus, vitae, alias mollitia expedita nostrum dolore. Ad doloremque ea quaerat! Nostrum architecto quaerat
-        impedit facilis porro quidem at temporibus laudantium nam odio accusantium veritatis fugiat maxime dolor, sed
-        unde molestiae ex quia quod quae distinctio. Nulla illo esse beatae laborum molestiae consequuntur voluptate,
-        aspernatur, autem fuga nam odio aut facere incidunt hic rem eveniet, repellendus minus. Officiis tenetur
-        necessitatibus, molestiae voluptatibus laudantium ratione dolorem nemo quos accusantium impedit veniam nihil
-        eveniet totam? Accusamus corrupti dignissimos deserunt repellendus esse quaerat a, officiis labore earum dolor
-        facilis rem tenetur quidem voluptates, amet vitae sint tempore iusto ipsum ad porro? Ut itaque eligendi, facilis
-        dolor voluptates, sed cum maiores soluta rem repellendus nemo tempora sunt, minus voluptate? Vero nihil
-        asperiores, nemo dolor nesciunt possimus saepe illum et magnam laborum error doloribus odit necessitatibus quam
-        suscipit perferendis recusandae excepturi, obcaecati fuga. Quibusdam voluptatum culpa nostrum quam dolorem
-        praesentium itaque reiciendis at ad libero mollitia repellendus non obcaecati nesciunt dignissimos adipisci
-        saepe, voluptas tempore doloribus, tempora nemo corporis. Expedita!</p>
-    </section>
-  </main>
-
-  <footer class="text-center py-3">
-    <div class="container">
-      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram mx-2"></i></a>
-      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
-      <p class="lead mt-3 text-white">&copy; Todos los derechos reservados</p>
-    </div>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>

@@ -1,11 +1,13 @@
 body {
-    background-color: #33322E;
-    color: #ffffff;
+  background-color: #33322e;
+  color: #ffffff;
 }
 
-.navbar,footer {
-    background-color: #00a8b1;
+.navbar,
+footer {
+  background-color: #00a8b1;
 }
+
 
 .futer {
     position: absolute;
@@ -14,7 +16,37 @@ body {
 }
 
 #principal {
-    margin-top: 80px;
+  margin-top: 80px;
+
+}
+
+.fab {
+  font-size: 30px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.fab:hover {
+  color: #33322e;
+  font-size: 32px;
+  opacity: 1;
+}
+
+.noPadd {
+  padding: 0;
+}
+
+.noMarg {
+  margin: 0;
+}
+
+.ubica {
+  position: relative;
+  top: 6rem;
+}
+
+.txtPagAdmin {
+  color: white;
 }
 
 /* REDES SOCIALES */
@@ -110,7 +142,34 @@ body {
     }
 }
 
+.txtModAdmin {
+  color: black;
+}
 
+.pantallaComp {
+  height: 100vh;
+}
 
+.botonRepro {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.botonRepro:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* .fondoDetPel {
+  position: absolute;
+  z-index: -1;
+} */
+
+@media only screen and (min-width: 1025px) {
+  .fondoDetPel {
+    position: absolute;
+    z-index: -1;
+  }
+}
 
 
