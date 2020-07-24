@@ -30,3 +30,8 @@ body {
 .pointer{
     cursor: pointer;
 }
+
+.loginRelative{
+    position: relative;
+    top: 60px;
+}
