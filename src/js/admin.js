@@ -41,6 +41,12 @@ window.agregarPelicula = function () {
   leerPeliculas();
 
   $(modalPelicula).modal("hide");
+
+  Swal.fire(
+    'Bien!',
+    'Agregaste una pelicula/serie nueva',
+    'success'
+  )
 };
 
 //funcion que valida campos
@@ -104,15 +110,33 @@ function borrarFila() {
 
 //funcion para borrar pelicula
 window.eliminarPelicula = function (movie) {
-  let arregloFiltrado = peliculas.filter(function (item) {
-    return item.codigo != movie.id;
-  });
+  Swal.fire({
+    title: 'Estas seguro de eliminar esta pelicula/serie?',
+    text: "Esta operacion no se puede deshacer.",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Eliminar'
+  }).then((result) => {
+    if (result.value) {
+      let arregloFiltrado = peliculas.filter(function (item) {
+        return item.codigo != movie.id;
+      });
+    
+      localStorage.setItem("keyPelicula", JSON.stringify(arregloFiltrado));
+      peliculas = arregloFiltrado;
+      leerPeliculas();
 
-  localStorage.setItem("keyPelicula", JSON.stringify(arregloFiltrado));
-  peliculas = arregloFiltrado;
-  leerPeliculas();
+      console.log(arregloFiltrado);
 
-  console.log(arregloFiltrado);
+      Swal.fire(
+        'Pelicula/serie eliminada.',
+        'El archivo fue eliminado con éxito.',
+        'success'
+      )
+    }
+  })
 };
 
 //funcion para editar peliculas
