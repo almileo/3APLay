@@ -3,6 +3,8 @@ import "bootstrap";
 import "../css/style.css";
 import Pelicula from "./pelicula.js";
 import $ from "jquery";
+import Swal from "sweetalert2";
+
 
 let peliculas = [];
 let codigo = document.getElementById("codigoAgregar");
