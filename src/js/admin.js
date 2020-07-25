@@ -162,11 +162,11 @@ function peliculaEditada(event){
   event.preventDefault();
   console.log("guardando pelicula editada");
   //tomar los nuevos datos
-  codigo = codigo.value;
-  nombre = nombre.value;
-  categoria = categoria.value;
-  descripcion = descripcion.value;
-  imagen = imagen.value;
+  codigo = document.getElementById("codigoAgregar").value;
+  nombre = document.getElementById("nombreAgregar").value;
+  categoria = document.getElementById("categoriaAgregar").value;
+  descripcion = document.getElementById("descripcionAgregar").value;
+  imagen = document.getElementById("imagenAgregar").value;
 
   //actualizar esos datos en el arreglo
   for (let i in peliculas){
