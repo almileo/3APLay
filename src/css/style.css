@@ -75,7 +75,7 @@ footer {
         0 0 150px #0F0F0F;
 }
 
-.btn-slider {
+.btn-slider, .btnFormulario {
     background-color: #00a8b1;
     color: white;
     width: 150px;
