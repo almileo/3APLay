@@ -159,11 +159,13 @@ footer {
 .botonRepro {
   text-decoration: none;
   color: #ffffff;
+  background: #00A8B1 ;
 }
 
 .botonRepro:hover {
   text-decoration: none;
   color: #ffffff;
+  background: #00A8B1;
 }
 
 
