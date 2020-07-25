@@ -50,7 +50,7 @@
     <section class="ubica">
         <div class="row noMarg">
             <div class="col-9 text-center">
-                <h3 class="text-center">Tabla de productos</h3>
+                <h3 class="text-center">Tabla de peliculas</h3>
             </div>
             <div class="col-2 text-right noPadd">
                 <button class="btn btn-outline-success" data-toggle="modal"
@@ -90,7 +90,7 @@ aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-            <form id="formAgregar" onsubmit="agregarPelicula(event)">
+            <form id="formAgregar" onsubmit="guardarDatos(event)">
                 <div class="form-group">
                     <label class="txtModAdmin">Código</label>
                     <input class="form-control" type="number" id="codigoAgregar" onblur="validaCampo(this)"

@@ -11,6 +11,7 @@ let categoria = document.getElementById("categoriaAgregar");
 let descripcion = document.getElementById("descripcionAgregar");
 let imagen = document.getElementById("imagenAgregar");
 let modalPelicula = document.getElementById("modalPelicula");
+let peliculaExitente = false; //variable bandera en false es una peli nueva. Si es true es una peli a editar
 
 leerPeliculas();
 
@@ -43,7 +44,7 @@ window.agregarPelicula = function (event) {
     localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
 
     //limpiar formulario
-    document.getElementById("formAgregar").reset();
+    limpiarFormulario();
 
     leerPeliculas();
 
@@ -91,7 +92,7 @@ function dibujarFila(_peliculas) {
         <td>${_peliculas[i].imagen}</td>
         <td>Si</td>
         <td>
-            <button class="btn btn-outline-primary" onclick="" id="editar"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
             <button class="btn btn-outline-warning my-1" onclick="" id="favorito"><i class="fas fa-star"></i></i></button>
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
@@ -110,6 +111,7 @@ function borrarFila() {
   }
 }
 
+//funcion para borrar pelicula
 window.eliminarPelicula = function (movie) {
   let arregloFiltrado = peliculas.filter(function (item) {
     return item.codigo != movie.id;
@@ -121,3 +123,74 @@ window.eliminarPelicula = function (movie) {
 
   console.log(arregloFiltrado);
 };
+
+//funcion para editar peliculas
+window.editarPelicula = function (codigo){ 
+  //buscar pelicula por codigo
+  let objetoEncontrado = peliculas.find(function(objetoPeli){
+    return objetoPeli.codigo == codigo;
+  })
+
+  console.log(objetoEncontrado);
+
+  //cargar el modal con los datos del objeto que quiero editar
+   document.getElementById("codigoAgregar").value = objetoEncontrado.codigo;
+   document.getElementById("nombreAgregar").value = objetoEncontrado.nombre;
+   document.getElementById("categoriaAgregar").value = objetoEncontrado.categoria;
+   document.getElementById("descripcionAgregar").value = objetoEncontrado.descripcion;
+   document.getElementById("imagenAgregar").value = objetoEncontrado.imagen;
+
+   //cambia valor variable bandera
+   peliculaExitente = true;
+
+  //abrir la ventana modal
+  $(modalPelicula).modal("show");
+
+}
+
+window.guardarDatos = function(event){
+  if(peliculaExitente == false){
+    //agrega una nueva peli
+    agregarPelicula(event);
+  } else {
+    //modifica una peli que ya existe
+    peliculaEditada(event);
+  }
+}
+
+function peliculaEditada(event){
+  event.preventDefault();
+  console.log("guardando pelicula editada");
+  //tomar los nuevos datos
+  codigo = codigo.value;
+  nombre = nombre.value;
+  categoria = categoria.value;
+  descripcion = descripcion.value;
+  imagen = imagen.value;
+
+  //actualizar esos datos en el arreglo
+  for (let i in peliculas){
+    if (peliculas[i].codigo == codigo){
+      peliculas[i].nombre = nombre;
+      peliculas[i].categoria = categoria;
+      peliculas[i].descripcion = descripcion;
+      peliculas[i].imagen = nombre;
+    }
+  }
+
+  //actualizar el LocalStorage
+  localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
+
+  limpiarFormulario();
+
+  //dibujar de nuevo la tabla
+  leerPeliculas();
+
+  //cerrar ventana modal
+  $(modalPelicula).modal("hide");
+}
+
+function limpiarFormulario(){
+  document.getElementById("formAgregar").reset();
+  peliculaExitente = false;
+}
