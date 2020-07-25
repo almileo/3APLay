@@ -14,12 +14,6 @@ footer {
   background-color: #00a8b1;
 }
 
-.futer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
 #principal {
   margin-top: 80px;
 }
@@ -45,8 +39,7 @@ footer {
 }
 
 .ubica {
-  position: relative;
-  top: 6rem;
+  margin-top: 7rem;
 }
 
 .txtPagAdmin {
@@ -132,10 +125,6 @@ footer {
 
 .txtModAdmin {
   color: black;
-}
-
-.pantallaComp {
-  height: 100vh;
 }
 
 .botonRepro {
