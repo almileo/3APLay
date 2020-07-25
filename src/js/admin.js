@@ -15,41 +15,30 @@ let peliculaExitente = false; //variable bandera en false es una peli nueva. Si 
 
 leerPeliculas();
 
-window.agregarPelicula = function (event) {
-  event.preventDefault();
+window.agregarPelicula = function () {
   console.log("Hola, funciono");
+  //crear el objeto
+  let objetoPelicula = new Pelicula(
+    codigo.value,
+    nombre.value,
+    categoria.value,
+    descripcion.value,
+    imagen.value
+  );
+  console.log(objetoPelicula);
 
-  //validacion para agregar
-  if (
-    validaCampo(codigo) &&
-    validaCampo(nombre) &&
-    validaCampo(categoria) &&
-    validaCampo(descripcion) &&
-    validaCampo(imagen)
-  ) {
-    //crear el objeto
-    let objetoPelicula = new Pelicula(
-      codigo.value,
-      nombre.value,
-      categoria.value,
-      descripcion.value,
-      imagen.value
-    );
-    console.log(objetoPelicula);
+  //guardo en el Array
+  peliculas.push(objetoPelicula);
 
-    //guardo en el Array
-    peliculas.push(objetoPelicula);
+  //array al LocalStorage
+  localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
 
-    //array al LocalStorage
-    localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
+  //limpiar formulario
+  limpiarFormulario();
 
-    //limpiar formulario
-    limpiarFormulario();
+  leerPeliculas();
 
-    leerPeliculas();
-
-    $(modalPelicula).modal("hide");
-  }
+  $(modalPelicula).modal("hide");
 };
 
 //funcion que valida campos
@@ -125,41 +114,53 @@ window.eliminarPelicula = function (movie) {
 };
 
 //funcion para editar peliculas
-window.editarPelicula = function (codigo){ 
+window.editarPelicula = function (codigo) {
   //buscar pelicula por codigo
-  let objetoEncontrado = peliculas.find(function(objetoPeli){
+  let objetoEncontrado = peliculas.find(function (objetoPeli) {
     return objetoPeli.codigo == codigo;
-  })
+  });
 
   console.log(objetoEncontrado);
 
   //cargar el modal con los datos del objeto que quiero editar
-   document.getElementById("codigoAgregar").value = objetoEncontrado.codigo;
-   document.getElementById("nombreAgregar").value = objetoEncontrado.nombre;
-   document.getElementById("categoriaAgregar").value = objetoEncontrado.categoria;
-   document.getElementById("descripcionAgregar").value = objetoEncontrado.descripcion;
-   document.getElementById("imagenAgregar").value = objetoEncontrado.imagen;
+  document.getElementById("codigoAgregar").value = objetoEncontrado.codigo;
+  document.getElementById("nombreAgregar").value = objetoEncontrado.nombre;
+  document.getElementById("categoriaAgregar").value =
+    objetoEncontrado.categoria;
+  document.getElementById("descripcionAgregar").value =
+    objetoEncontrado.descripcion;
+  document.getElementById("imagenAgregar").value = objetoEncontrado.imagen;
 
-   //cambia valor variable bandera
-   peliculaExitente = true;
+  //cambia valor variable bandera
+  peliculaExitente = true;
 
   //abrir la ventana modal
   $(modalPelicula).modal("show");
+};
 
-}
-
-window.guardarDatos = function(event){
-  if(peliculaExitente == false){
-    //agrega una nueva peli
-    agregarPelicula(event);
-  } else {
-    //modifica una peli que ya existe
-    peliculaEditada(event);
-  }
-}
-
-function peliculaEditada(event){
+window.guardarDatos = function (event) {
   event.preventDefault();
+  //agrego validaciones
+  if (
+    validaCampo(codigo) &&
+    validaCampo(nombre) &&
+    validaCampo(categoria) &&
+    validaCampo(descripcion) &&
+    validaCampo(imagen)
+  ) {
+    if (peliculaExitente == false) {
+      //agrega una nueva peli
+      agregarPelicula();
+    } else {
+      //modifica una peli que ya existe
+      peliculaEditada();
+    }
+  } else {
+    alert("No");
+  }
+};
+
+function peliculaEditada() {
   console.log("guardando pelicula editada");
   //tomar los nuevos datos
   codigo = document.getElementById("codigoAgregar").value;
@@ -169,8 +170,8 @@ function peliculaEditada(event){
   imagen = document.getElementById("imagenAgregar").value;
 
   //actualizar esos datos en el arreglo
-  for (let i in peliculas){
-    if (peliculas[i].codigo == codigo){
+  for (let i in peliculas) {
+    if (peliculas[i].codigo == codigo) {
       peliculas[i].nombre = nombre;
       peliculas[i].categoria = categoria;
       peliculas[i].descripcion = descripcion;
@@ -190,7 +191,7 @@ function peliculaEditada(event){
   $(modalPelicula).modal("hide");
 }
 
-function limpiarFormulario(){
+window.limpiarFormulario = function () {
   document.getElementById("formAgregar").reset();
   peliculaExitente = false;
-}
+};
