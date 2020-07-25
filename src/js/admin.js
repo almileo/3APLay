@@ -6,6 +6,7 @@ import $ from "jquery";
 import Swal from "sweetalert2";
 
 
+
 let peliculas = [];
 let codigo = document.getElementById("codigoAgregar");
 let nombre = document.getElementById("nombreAgregar");
@@ -115,7 +116,7 @@ window.eliminarPelicula = function (movie) {
     text: "Esta operacion no se puede deshacer.",
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
+    confirmButtonColor: '#00a8b1',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Eliminar'
   }).then((result) => {
