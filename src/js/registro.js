@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css';
 import { contains } from 'jquery';
+import Swal from 'sweetalert2';
 
 let nombreRegistro = document.getElementById('nombre');
 let apellidoRegistro = document.getElementById('apellido');
