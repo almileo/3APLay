@@ -85,11 +85,6 @@ footer {
   box-shadow: 5px 6px 7px 0px #00a8b1;
 }
 
-/* ALERT */
-.colorAlerta {
-  background-color: #00a8b1;
-}
-
 /* MEDIA QUERIES */
 @media (max-width: 576px) {
   #tituloError {
