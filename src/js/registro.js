@@ -111,7 +111,7 @@ window.enviarRegistro = function (event) {
         repetirContrasenia() &&
         chkTerminos()) {
         console.log("OK");
-        enviarEmail();
+        // enviarEmail();
     } else {
         console.log("ERROR!");
     }
@@ -132,8 +132,6 @@ function enviarEmail() {
     let template_id = "template_9MeIpA4X";
     emailjs.send(service_id, template_id, template_params).then(function (response) {
         console.log(response);
-        document.getElementById('mjeEnvioDatos').className = 'alert colorAlerta my-4';
-        document.getElementById('mjeEnvioDatos').innerText = 'Sus datos se enviaron correctamente.'
         document.getElementById('formRegistro').reset();
         Swal.fire(
             'Tus datos se enviaron correctamente!',
@@ -143,7 +141,10 @@ function enviarEmail() {
 
         function (error) {
             console.log(error);
-            document.getElementById(`msjEnvio`).className = `alert colorAlerta my-4`;
-            document.getElementById(`msjEnvio`).innerText = `Ocurrió un error, inténtelo nuevamente en unos minutos.`;
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Algo sucedió! Prueba nuevamente en unos minutos.',
+            })
         });
 }
