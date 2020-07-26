@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css';
 import { contains } from 'jquery';
-import Swal from 'sweetalert2';
 
 let nombreRegistro = document.getElementById('nombre');
 let apellidoRegistro = document.getElementById('apellido');
@@ -134,7 +133,6 @@ function enviarEmail() {
         console.log(response);
         document.getElementById('mjeEnvioDatos').className = 'alert colorAlerta my-4';
         document.getElementById('mjeEnvioDatos').innerText = 'Sus datos se enviaron correctamente.'
-        window.setTimeout(borrarAlerta, 10000);
         document.getElementById('formRegistro').reset();
     },
 
@@ -143,10 +141,4 @@ function enviarEmail() {
             document.getElementById(`msjEnvio`).className = `alert colorAlerta my-4`;
             document.getElementById(`msjEnvio`).innerText = `Ocurrió un error, inténtelo nuevamente en unos minutos.`;
         });
-}
-
-// BORRAR ALERTA
-function borrarAlerta() {
-    document.getElementById('mjeEnvioDatos').className = 'd-none';
-    document.getElementById('mjeEnvioDatos').innerText = '';
 }
