@@ -134,6 +134,7 @@ function enviarEmail() {
         console.log(response);
         document.getElementById('formRegistro').reset();
         Swal.fire(
+            'Perfecto!',
             'Tus datos se enviaron correctamente!',
             'success'
         );
