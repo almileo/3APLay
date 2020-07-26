@@ -2,7 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css';
 import { contains } from 'jquery';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import emailjs from 'emailjs-com';
 
 let nombreRegistro = document.getElementById('nombre');
 let apellidoRegistro = document.getElementById('apellido');
@@ -130,7 +131,9 @@ function enviarEmail() {
 
     let service_id = "default_service";
     let template_id = "template_9MeIpA4X";
-    emailjs.send(service_id, template_id, template_params).then(function (response) {
+    emailjs.send(service_id, template_id, template_params, (function () {
+        emailjs.init("user_QsPhGrQDOyU9IjYtA4IHQ");
+    })()).then(function (response) {
         console.log(response);
         document.getElementById('formRegistro').reset();
         Swal.fire(
