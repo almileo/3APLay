@@ -49,15 +49,15 @@
     </nav>
   </header>
 
-  <main class="container noPadd pantallaComp">
+  <main class="container noPadd position-relative ">
     <section class="ubica">
         <div class="row noMarg">
             <div class="col-9 text-center">
-                <h3 class="text-center">Tabla de productos</h3>
+                <h3 class="text-center">Tabla de peliculas</h3>
             </div>
             <div class="col-2 text-right noPadd">
                 <button class="btn btn-outline-success" data-toggle="modal"
-                    data-target="#modalPelicula" onclick=""><i class="fas fa-plus"></i> Agregar</button>
+                    data-target="#modalPelicula" onclick="limpiarFormulario()"><i class="fas fa-plus"></i> Agregar</button>
             </div>
         </div>
         <article class="table-responsive mt-5">
@@ -93,7 +93,7 @@ aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-            <form id="formAgregar" onsubmit="agregarPelicula(event)">
+            <form id="formAgregar" onsubmit="guardarDatos(event)">
                 <div class="form-group">
                     <label class="txtModAdmin">Código</label>
                     <input class="form-control" type="number" id="codigoAgregar" onblur="validaCampo(this)"
@@ -130,7 +130,7 @@ aria-hidden="true">
 </div>
 </div>
 
-  <footer class="text-center py-3 futer">
+  <footer class="text-center py-3">
     <div class="container">
       <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
       <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram mx-2"></i></a>
