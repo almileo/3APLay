@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css';
 import { contains } from 'jquery';
+import Swal from 'sweetalert2'
 
 let nombreRegistro = document.getElementById('nombre');
 let apellidoRegistro = document.getElementById('apellido');
@@ -134,6 +135,10 @@ function enviarEmail() {
         document.getElementById('mjeEnvioDatos').className = 'alert colorAlerta my-4';
         document.getElementById('mjeEnvioDatos').innerText = 'Sus datos se enviaron correctamente.'
         document.getElementById('formRegistro').reset();
+        Swal.fire(
+            'Tus datos se enviaron correctamente!',
+            'success'
+        );
     },
 
         function (error) {
