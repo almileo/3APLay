@@ -72,7 +72,7 @@ window.enviarContacto = function (event) {
         consultaContacto()
     ) {
         console.log("OK");
-        // enviarMail();
+        enviarMail();
     } else {
         console.log("ERROR!");
     }
@@ -89,12 +89,12 @@ function enviarMail() {
     }
 
     let service_id = "default_service";
-    let template_id = "template_9MeIpA4X";
+    let template_id = "formulariocontacto";
     emailjs.send(service_id, template_id, template_params, (function () {
-        emailjs.init("user_QsPhGrQDOyU9IjYtA4IHQ");
+        emailjs.init("user_ZWC2NMhaitYaXnaca2pUa");
     })()).then(function (response) {
         console.log(response);
-        document.getElementById('formRegistro').reset();
+        document.getElementById('formContacto').reset();
         Swal.fire(
             'Perfecto!',
             'Tu mensaje se envió correctamente!',
