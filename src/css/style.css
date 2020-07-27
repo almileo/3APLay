@@ -48,7 +48,7 @@ footer {
 }
 
 .fab:hover {
-  color: #33322e;
+  color: #252524;
   font-size: 32px;
   opacity: 1;
 }
@@ -132,17 +132,14 @@ footer {
   color: #ffffff;
   background: #00a8b1;
 }
-
-.formOpac {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .pointer {
   cursor: pointer;
 }
 
-.loginRelative {
-  position: relative;
-  top: 60px;
+.texto{
+  color: #00a8b1;
+
+}.avatar{
+  border-radius: 50%;
 }
 
