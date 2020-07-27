@@ -130,7 +130,7 @@ function enviarEmail() {
     }
 
     let service_id = "default_service";
-    let template_id = "template_BmxY9zmX";
+    let template_id = "formularioRegistro";
     emailjs.send(service_id, template_id, template_params, (function () {
         emailjs.init("user_ZWC2NMhaitYaXnaca2pUa");
     })()).then(function (response) {
