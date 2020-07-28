@@ -6,7 +6,6 @@ import $ from "jquery";
 import Swal from "sweetalert2";
 
 
-
 let peliculas = [];
 let codigo = document.getElementById("codigoAgregar");
 let nombre = document.getElementById("nombreAgregar");
@@ -98,10 +97,12 @@ function dibujarFila(_peliculas) {
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
+      console.log(_peliculas[i])
+      insertarDestacadaSlider(_peliculas[i]);
 
     } else {
 
-      console.log("desde dentro de PELICULA DESTACADA FALSE")
+      console.log("desde dentro de PELICULA DESTACADA FALSE");
       codHTML = `<tr class="txtPagAdmin">
         <th scope="row">${_peliculas[i].codigo}</th>
         <td>${_peliculas[i].nombre}</td>
@@ -121,6 +122,7 @@ function dibujarFila(_peliculas) {
   }
 }
 
+// SELECCION DE PELICULA DESTACADA (CLICK)
 window.peliculaDestacada = function (codigo) {
   console.log("desde dentro de peliculaDestacada");
   console.log(codigo);
@@ -130,6 +132,27 @@ window.peliculaDestacada = function (codigo) {
   // LEER FILAS
   leerPeliculas();
 }
+
+// INSERTAR DESTACADA EN SLIDER
+function insertarDestacadaSlider(peliculaDestacada) {
+  console.log("desde dentro de insertarDestacadaSlider");
+  console.log(peliculaDestacada);
+
+  console.log(peliculaDestacada.nombre)
+  // let div = document.getElementById("peliculaPrincipal");
+  // let codHTML = "";
+  let prueba = document.getElementById("tituloDestacadaUno");
+  console.log(prueba)
+  // tituloDestacadaUno.innerText = `Jo`;
+
+
+  // codHTML = `<h2 class="display-3 fondoOscuro" id="tituloDestacadaUno">${peliculaDestacada.nombre}</h2>`;
+  // document.getElementById('descriptionDestacadaUno').innerHTML = `<p class="lead my-4 fondoOscuro d-none d-md-block" id="descriptionDestacadaUno">La serie chilena de Amazon inspirada en el caso de "La Manada".</p>`;
+  // document.getElementById('descriptionDestacadaUno').innerHTML = `<a href="error404.html" class="btn btn-slider my-4 d-none d-md-block"><i class="fas fa-play mr-3"></i>Reproducir</a>`;
+
+  // div.innerHTML += codHTML;
+}
+
 
 // FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
 function peliculaSeleccionada(codigo) {
@@ -146,7 +169,7 @@ function peliculaSeleccionada(codigo) {
   } else {
     objetoEncontrado.itemDestacado = false;
   }
-  
+
   localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
   console.log(objetoEncontrado.itemDestacado);
   console.log(objetoEncontrado);
