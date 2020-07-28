@@ -6,7 +6,6 @@ import $ from "jquery";
 import Swal from "sweetalert2";
 
 
-
 let peliculas = [];
 let codigo = document.getElementById("codigoAgregar");
 let nombre = document.getElementById("nombreAgregar");
@@ -82,7 +81,10 @@ function dibujarFila(_peliculas) {
   let tbody = document.getElementById("listaPeliculas");
   let codHTML = "";
   for (let i in _peliculas) {
-    codHTML = `<tr class="txtPagAdmin">
+    if (_peliculas[i].itemDestacado == true) {
+
+      console.log("desde dentro de PELICULA DESTACADA TRUE")
+      codHTML = `<tr class="txtPagAdmin">
         <th scope="row">${_peliculas[i].codigo}</th>
         <td>${_peliculas[i].nombre}</td>
         <td>${_peliculas[i].categoria}</td>
@@ -91,13 +93,86 @@ function dibujarFila(_peliculas) {
         <td>Si</td>
         <td>
             <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-outline-warning my-1" onclick="" id="favorito"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-warning my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
+      console.log(_peliculas[i])
+      insertarDestacadaSlider(_peliculas[i]);
+
+    } else {
+
+      console.log("desde dentro de PELICULA DESTACADA FALSE");
+      codHTML = `<tr class="txtPagAdmin">
+        <th scope="row">${_peliculas[i].codigo}</th>
+        <td>${_peliculas[i].nombre}</td>
+        <td>${_peliculas[i].categoria}</td>
+        <td>${_peliculas[i].descripcion}</td>
+        <td>${_peliculas[i].imagen}</td>
+        <td>Si</td>
+        <td>
+            <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-outline-secondary my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
+        </td>
+    </tr>`;
+    }
 
     tbody.innerHTML += codHTML;
   }
+}
+
+// SELECCION DE PELICULA DESTACADA (CLICK)
+window.peliculaDestacada = function (codigo) {
+  console.log("desde dentro de peliculaDestacada");
+  console.log(codigo);
+
+  peliculaSeleccionada(codigo);
+
+  // LEER FILAS
+  leerPeliculas();
+}
+
+// INSERTAR DESTACADA EN SLIDER
+function insertarDestacadaSlider(peliculaDestacada) {
+  console.log("desde dentro de insertarDestacadaSlider");
+  console.log(peliculaDestacada);
+
+  console.log(peliculaDestacada.nombre)
+  // let div = document.getElementById("peliculaPrincipal");
+  // let codHTML = "";
+  let prueba = document.getElementById("tituloDestacadaUno");
+  console.log(prueba)
+  // tituloDestacadaUno.innerText = `Jo`;
+
+
+  // codHTML = `<h2 class="display-3 fondoOscuro" id="tituloDestacadaUno">${peliculaDestacada.nombre}</h2>`;
+  // document.getElementById('descriptionDestacadaUno').innerHTML = `<p class="lead my-4 fondoOscuro d-none d-md-block" id="descriptionDestacadaUno">La serie chilena de Amazon inspirada en el caso de "La Manada".</p>`;
+  // document.getElementById('descriptionDestacadaUno').innerHTML = `<a href="error404.html" class="btn btn-slider my-4 d-none d-md-block"><i class="fas fa-play mr-3"></i>Reproducir</a>`;
+
+  // div.innerHTML += codHTML;
+}
+
+
+// FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
+function peliculaSeleccionada(codigo) {
+  console.log("dentro de pelicula seleccionada");
+
+  let objetoEncontrado = peliculas.find(function (objetoPeli) {
+    return objetoPeli.codigo == codigo;
+  });
+
+  console.log(objetoEncontrado.itemDestacado);
+
+  if (objetoEncontrado.itemDestacado == false) {
+    objetoEncontrado.itemDestacado = true;
+  } else {
+    objetoEncontrado.itemDestacado = false;
+  }
+
+  localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
+  console.log(objetoEncontrado.itemDestacado);
+  console.log(objetoEncontrado);
 }
 
 function borrarFila() {
@@ -124,7 +199,7 @@ window.eliminarPelicula = function (movie) {
       let arregloFiltrado = peliculas.filter(function (item) {
         return item.codigo != movie.id;
       });
-    
+
       localStorage.setItem("keyPelicula", JSON.stringify(arregloFiltrado));
       peliculas = arregloFiltrado;
       leerPeliculas();
