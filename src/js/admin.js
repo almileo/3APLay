@@ -82,7 +82,10 @@ function dibujarFila(_peliculas) {
   let tbody = document.getElementById("listaPeliculas");
   let codHTML = "";
   for (let i in _peliculas) {
-    codHTML = `<tr class="txtPagAdmin">
+    if (_peliculas[i].itemDestacado == true) {
+
+      console.log("desde dentro de PELICULA DESTACADA TRUE")
+      codHTML = `<tr class="txtPagAdmin">
         <th scope="row">${_peliculas[i].codigo}</th>
         <td>${_peliculas[i].nombre}</td>
         <td>${_peliculas[i].categoria}</td>
@@ -91,13 +94,62 @@ function dibujarFila(_peliculas) {
         <td>Si</td>
         <td>
             <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-outline-warning my-1" onclick="" id="favorito"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-warning my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
 
+    } else {
+
+      console.log("desde dentro de PELICULA DESTACADA FALSE")
+      codHTML = `<tr class="txtPagAdmin">
+        <th scope="row">${_peliculas[i].codigo}</th>
+        <td>${_peliculas[i].nombre}</td>
+        <td>${_peliculas[i].categoria}</td>
+        <td>${_peliculas[i].descripcion}</td>
+        <td>${_peliculas[i].imagen}</td>
+        <td>Si</td>
+        <td>
+            <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-outline-secondary my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
+        </td>
+    </tr>`;
+    }
+
     tbody.innerHTML += codHTML;
   }
+}
+
+window.peliculaDestacada = function (codigo) {
+  console.log("desde dentro de peliculaDestacada");
+  console.log(codigo);
+
+  peliculaSeleccionada(codigo);
+
+  // LEER FILAS
+  leerPeliculas();
+}
+
+// FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
+function peliculaSeleccionada(codigo) {
+  console.log("dentro de pelicula seleccionada");
+
+  let objetoEncontrado = peliculas.find(function (objetoPeli) {
+    return objetoPeli.codigo == codigo;
+  });
+
+  console.log(objetoEncontrado.itemDestacado);
+
+  if (objetoEncontrado.itemDestacado == false) {
+    objetoEncontrado.itemDestacado = true;
+  } else {
+    objetoEncontrado.itemDestacado = false;
+  }
+  
+  localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
+  console.log(objetoEncontrado.itemDestacado);
+  console.log(objetoEncontrado);
 }
 
 function borrarFila() {
@@ -124,7 +176,7 @@ window.eliminarPelicula = function (movie) {
       let arregloFiltrado = peliculas.filter(function (item) {
         return item.codigo != movie.id;
       });
-    
+
       localStorage.setItem("keyPelicula", JSON.stringify(arregloFiltrado));
       peliculas = arregloFiltrado;
       leerPeliculas();
