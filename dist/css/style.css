@@ -76,12 +76,12 @@ body {
 }
 
 /* IMAGENES */
-.rounded {
+.efectosImg {
     opacity: 0.6;
     position: relative;
 }
 
-.rounded:hover {
+.efectosImg:hover {
     opacity: 1;
     transition: all .5s ease-in-out;
     top: -5px;
