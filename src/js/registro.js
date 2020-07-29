@@ -130,9 +130,9 @@ function enviarEmail() {
     }
 
     let service_id = "default_service";
-    let template_id = "template_9MeIpA4X";
+    let template_id = "formularioRegistro";
     emailjs.send(service_id, template_id, template_params, (function () {
-        emailjs.init("user_QsPhGrQDOyU9IjYtA4IHQ");
+        emailjs.init("user_ZWC2NMhaitYaXnaca2pUa");
     })()).then(function (response) {
         console.log(response);
         document.getElementById('formRegistro').reset();
