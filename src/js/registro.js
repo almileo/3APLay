@@ -112,7 +112,7 @@ window.enviarRegistro = function (event) {
         repetirContrasenia() &&
         chkTerminos()) {
         console.log("OK");
-        // enviarEmail();
+        enviarEmail();
     } else {
         console.log("ERROR!");
     }
