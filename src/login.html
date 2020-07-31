@@ -49,17 +49,30 @@
   <section id="principal">
     <div class="row justify-content-center">
       <div class="col-sm-12 col-md-5 mt-5">
-        <form class="shadow p-3 mb-5 rounded" id="formLogin" onsubmit="ingresarLogin(event)">
+        <form class="shadow p-3 mb-5 rounded" id="formLogin" onsubmit="admin(event)">
           <h1>Inicia sesión</h1>
           <hr>
             <div>
                 <div class="form-group">
-                    <label>Nombre de usuario o Email</label>
-                    <input class="form-control" type="text" id="nombreLogin" onblur="nombreLogin(this)" placeholder="Tu nombre de usuario">
+                    <label>Nombre de usuario</label>
+                    <input class="form-control" type="text" id="nombreLogin" placeholder="Tu nombre de usuario">
+                    <div class="valid-feedback">
+                      Perfecto!
+                    </div>
+                    <div class="invalid-feedback">
+                      Por favor, su nombre de usuario solo con letras minusculas.
+                    </div>
+                </div>
                 </div>
                 <div class="form-group">
                     <label>Contraseña</label>
-                    <input class="form-control" type="password" id="contraseñaLogin" onblur="contraseñaLogin(this)" placeholder="Tu contraseña">
+                    <input class="form-control" type="password" id="passwLogin" placeholder="Tu contraseña">
+                    <div class="valid-feedback">
+                      Perfecto!
+                    </div>
+                    <div class="invalid-feedback">
+                      Por favor, ingrese su contraseña.Asegurese de que tenga mas de 8 caracteres.
+                    </div>
                     <a class="text-primary pointer float-right" data-toggle="modal" data-target="#exampleModal">
                       <small>¿Olvidaste tu contraseña?</small>
                     </a>
@@ -110,7 +123,13 @@
       <div class="modal-body">
         <form>
           <h5 class="lead">Para recuperar tu contraseña necesitamos tu correo electronico:</h5>
-          <input class="form-control" placeholder="ejemplo@outlook.com">
+          <input class="form-control" id="emailRec" placeholder="ejemplo@outlook.com">
+          <div class="valid-feedback">
+            Perfecto!
+          </div>
+          <div class="invalid-feedback">
+            Por favor, ingrese un correo electronico valido.
+          </div>
           <p class="text-muted">A continuación se le enviaran ahi los pasos a seguir para restablecer su contraseña</p>
           <hr>
           <button class="btn btnFormulario text-center">Enviar</button>
