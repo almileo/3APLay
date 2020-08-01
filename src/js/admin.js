@@ -98,7 +98,7 @@ function dibujarFila(_peliculas) {
         </td>
     </tr>`;
       console.log(_peliculas[i])
-      insertarDestacadaSlider(_peliculas[i]);
+      // insertarDestacadaSlider(_peliculas[i]);
 
     } else {
 
@@ -132,27 +132,6 @@ window.peliculaDestacada = function (codigo) {
   // LEER FILAS
   leerPeliculas();
 }
-
-// INSERTAR DESTACADA EN SLIDER
-function insertarDestacadaSlider(peliculaDestacada) {
-  console.log("desde dentro de insertarDestacadaSlider");
-  console.log(peliculaDestacada);
-
-  console.log(peliculaDestacada.nombre)
-  // let div = document.getElementById("peliculaPrincipal");
-  // let codHTML = "";
-  let prueba = document.getElementById("peliculasDestacadas");
-  console.log(prueba)
-  // tituloDestacadaUno.innerText = `Jo`;
-
-
-  // codHTML = `<h2 class="display-3 fondoOscuro" id="tituloDestacadaUno">${peliculaDestacada.nombre}</h2>`;
-  // document.getElementById('descriptionDestacadaUno').innerHTML = `<p class="lead my-4 fondoOscuro d-none d-md-block" id="descriptionDestacadaUno">La serie chilena de Amazon inspirada en el caso de "La Manada".</p>`;
-  // document.getElementById('descriptionDestacadaUno').innerHTML = `<a href="error404.html" class="btn btn-slider my-4 d-none d-md-block"><i class="fas fa-play mr-3"></i>Reproducir</a>`;
-
-  // div.innerHTML += codHTML;
-}
-
 
 // FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
 function peliculaSeleccionada(codigo) {
