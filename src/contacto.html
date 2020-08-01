@@ -55,26 +55,47 @@
             <div class="rounded my-5 p-3">
               <div class="form-group">
                 <label>Nombre</label>
-                <input class="form-control" type="text" id="nombreContacto" onblur="nombreContacto(this)"
-                  placeholder="Ingrese su nombre">
+                <input class="form-control" type="text" id="nombreContacto" placeholder="Ingrese su nombre">
+                <div class="valid-feedback">
+                  Perfecto!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, ingrese solamente letras.
+                </div>
               </div>
               <div class="form-group">
                 <label>Apellido</label>
-                <input class="form-control" type="text" id="apellidoContacto" onblur="apellidoContacto(this)"
-                  placeholder="Ingrese su apellido">
+                <input class="form-control" type="text" id="apellidoContacto" placeholder="Ingrese su apellido">
+                <div class="valid-feedback">
+                  Perfecto!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, ingrese solamente letras.
+                </div>
               </div>
               <div class="form-group">
                 <label>Email</label>
-                <input class="form-control" type="email" id="emailContacto" onblur="emailContacto(this)"
-                  placeholder="ejemplo@gmail.com">
+                <input class="form-control" type="email" id="emailContacto" placeholder="ejemplo@gmail.com">
+                <div class="valid-feedback">
+                  Perfecto!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, ingrese un e-mail válido.
+                </div>
               </div>
               <div class="form-group">
                 <label>Consulta</label>
-                <textarea class="form-control" rows="5" id="consultaContacto" onblur="consultaContacto(this)"
+                <textarea class="form-control" rows="5" id="consultaContacto"
                   placeholder="Agregue su consulta"></textarea>
+                <div class="valid-feedback">
+                  Perfecto!
+                </div>
+                <div class="invalid-feedback">
+                  La consulta debe contener como mínimo 20 caracteres.
+                </div>
               </div>
               <div class="text-center">
-                <button class="btn btn-outline-primary btn-block" type="submit">Enviar</button>
+                <button class="btn btnFormulario btn-block" type="submit">Enviar</button>
               </div>
             </div>
           </form>
