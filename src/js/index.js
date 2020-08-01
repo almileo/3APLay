@@ -101,7 +101,23 @@ function leerPeliculas() {
 }
 
 
+destacada();
 
+function destacada() {
+  // LEER DATOS DE LS
+  if (localStorage.length > 0) {
+    let _peliculas = JSON.parse(localStorage.getItem("keyPelicula"));
+    console.log(_peliculas);
+    
+    if (peliculas.length == 0) {
+      peliculas = _peliculas;
+    }
+  }
+}
+
+
+
+// let _peliculas = JSON.parse(localStorage.getItem('keyPelicula'));
 
 
 
@@ -112,7 +128,6 @@ function leerPeliculas() {
 
 // let peliculas = [];
 
-// let _peliculas = JSON.parse(localStorage.getItem('keyPelicula'));
 
 // // peliculas = _peliculas;
 // // filtrarDestacada();
