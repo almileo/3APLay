@@ -141,8 +141,8 @@ function insertarDestacadaSlider(peliculaDestacada) {
   console.log(peliculaDestacada.nombre)
   // let div = document.getElementById("peliculaPrincipal");
   // let codHTML = "";
-  // let prueba = document.getElementById("peliculasDestacadas");
-  // console.log(prueba)
+  let prueba = document.getElementById("peliculasDestacadas");
+  console.log(prueba)
   // tituloDestacadaUno.innerText = `Jo`;
 
 
