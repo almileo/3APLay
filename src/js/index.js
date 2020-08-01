@@ -123,10 +123,10 @@ function filtrar (){
 }
 
 busqueda.addEventListener("keyup", filtrar);
-busqueda.addEventListener("blur", limpiarBusqueda);
+botonLimpiar.addEventListener("click", limpiarBusqueda);
 
 function limpiarBusqueda(){
-  document.getElementById("formBusqueda").reset();
   resultado.innerHTML = "";
+  
 }
 

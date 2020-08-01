@@ -156,7 +156,9 @@ footer {
   border-radius: 50%;
 }
 
-
+.arregloFooter {
+  min-height: calc(100vh - 84px - 126px);
+}
 
 
 
