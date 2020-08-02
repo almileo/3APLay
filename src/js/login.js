@@ -2,58 +2,95 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css';
 import Swal from 'sweetalert2';
+import $ from 'jquery';
 
-let user = document.getElementById('nombreLogin')
-let clave = document.getElementById('passwLogin')
-let correo = document.getElementById('emailRec')
+let user = document.getElementById('nombreLogin');
+let clave = document.getElementById('passwLogin');
+let correo = document.getElementById('emailRec');
 
-user.addEventListener('blur', usuario)
-clave.addEventListener('blur', password)
-correo.addEventListener('blur', recEmail)
+user.addEventListener('blur', usuario);
+clave.addEventListener('blur', password);
+correo.addEventListener('blur', recEmail);
 
 //validar usuario
- function usuario(){
-    let expresion = /[a-z]/
-     if(user.value != "" && isNaN(user.value) && expresion.test(user.value)){
-         user.className = "form-control is-valid"
-     }else{
-         user.className = "form-control is-invalid"
-     }
- }
+function usuario() {
+    let expresion = /[a-z]/;
+    if (user.value != "" && isNaN(user.value) && expresion.test(user.value)) {
+        user.className = "form-control is-valid";
+        return true;
+    } else {
+        user.className = "form-control is-invalid";
+        return false;
+    }
+}
 
- //validar contraseña
- function password(){
-     let caracteres =8;
-     if(clave.value.length >= caracteres){
-        clave.className = "form-control is-valid"
-     }else{
-        clave.className = "form-control is-invalid"
-     }
- }
+//validar contraseña
+function password() {
+    const longitud = 8;
+    if (clave.value.length >= longitud) {
+        clave.className = "form-control is-valid";
+        return true;
+    } else {
+        clave.className = "form-control is-invalid";
+        return false;
+    }
+}
 
- //validar email de modal recuperar contraseña
- function recEmail(){
-     let emailExpre = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
-     if(correo.value != emailExpre.test(correo.value)){
-         correo.className = "form-control is-valid"
-     }else{
-         correo.className= "form-control is-invalid"
-     }
- }
+// VALIDAR EMAIL DE MODAL RECUPERAR CONTRASEÑA
+function recEmail() {
+    let emailExpre = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+    if (correo.value != "" && emailExpre.test(correo.value)) {
+        correo.className = "form-control is-valid";
+        return true;
+    } else {
+        correo.className = "form-control is-invalid";
+        return false;
+    }
+}
 
- //ingresar como administrador e ir a admin.html
- window.admin = function(event){
-     event.preventDefault()
-     let userAdm = "admin-play"
-     let passAdm = "rolling2020"
-     if(user.value == userAdm && clave.value == passAdm){
-         window.location.replace("./admin.html")
-     }else{
+// VALIDACION GENERAL
+window.admin = function (event) {
+    event.preventDefault();
+    if (usuario() &&
+        password()) {
+        console.log("OK");
+        validarCuentaAdmin(event);
+    } else {
+        console.log("ERROR!");
+    }
+}
+
+// VALIDAR EMAIL DE RECUPERO PASS
+window.recuperoEmail = function (event) {
+    event.preventDefault();
+    if (recEmail()) {
+        console.log("email OK")
+        let modalRecuperoContrasenia = document.getElementById('modalRecuperoContrasenia');
+        Swal.fire(
+            'Perfecto!',
+            'Tus datos se enviaron correctamente!',
+            'success'
+            );
+            $(modalRecuperoContrasenia).modal('hide');
+        } else {
+        console.log("email NO OK")
+    }
+}
+
+// VALIDAR ADMIN E IR A admin.html
+function validarCuentaAdmin(event) {
+    event.preventDefault();
+    let userAdm = "admin-play";
+    let passAdm = "rolling2020";
+    if (user.value == userAdm && clave.value == passAdm) {
+        window.location.replace("./admin.html");
+    } else {
+        user.className = "form-control";
+        clave.className = "form-control";
         Swal.fire({
             icon: 'error',
-            title: 'El usuario que ingresó no existe.',
+            title: 'Tus datos son incorrectos.',
             text: 'Por favor, procure escribir los datos requeridos de manera correcta.',
-        })
-     }
- }
- 
+        });
+    };
+}

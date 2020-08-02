@@ -18,14 +18,19 @@ footer {
   margin-top: 80px;
 }
 
-.fab {
+.redes {
   font-size: 30px;
   color: #ffffff;
   opacity: 0.8;
 }
 
+<<<<<<< HEAD
 .fab:hover {
   color: #00a8b1;
+=======
+.redes:hover {
+  color: #33322e;
+>>>>>>> login
   font-size: 32px;
   opacity: 1;
 }
@@ -47,14 +52,19 @@ footer {
 }
 
 /* REDES SOCIALES */
-.fab {
+.redes {
   font-size: 30px;
   color: #ffffff;
   opacity: 0.8;
 }
 
+<<<<<<< HEAD
 .fab:hover {
   color: #00A8B1;
+=======
+.redes:hover {
+  color: #252524;
+>>>>>>> login
   font-size: 32px;
   opacity: 1;
 }
@@ -91,6 +101,15 @@ footer {
     box-shadow: 5px 6px 7px 0px #00A8B1;
 }
 
+/* LOGIN */
+#olvidasteContrasenia{
+  color: #00a8b1;
+}
+
+#olvidasteContrasenia:hover{
+  color: #ffffff;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 576px) {
   #tituloError {
@@ -111,7 +130,7 @@ footer {
     font-size: small;
   }
 
-  .fab {
+  .redes {
     font-size: 25px;
   }
 
