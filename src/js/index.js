@@ -130,3 +130,16 @@ function limpiarBusqueda(){
   
 }
 
+//filtro por categorias
+let filtroAccion = document.getElementById("filtroAccion");
+let filtroComedia = document.getElementById("filtroComedia");
+let filtroCienciaFiccion = document.getElementById("filtroCienciaFiccion");
+let filtroTerror = document.getElementById("filtroTerror");
+
+
+window.filtraCat = function(){
+  if(filtroAccion.checked || filtroComedia.checked || filtroCienciaFiccion.checked || filtroTerror.checked ){
+    alert("filtra y todo");
+  }
+}
+
