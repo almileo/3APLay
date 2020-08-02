@@ -51,83 +51,83 @@
 
   <main class="container noPadd position-relative ">
     <section class="ubica">
-        <div class="row noMarg">
-            <div class="col-9 text-center">
-                <h3 class="text-center">Tabla de películas</h3>
-            </div>
-            <div class="col-2 text-right noPadd">
-                <button class="btn btnAgregar" data-toggle="modal"
-                    data-target="#modalPelicula" onclick="limpiarFormulario()"><i class="fas fa-upload pr-3"></i>Agregar</button>
-            </div>
+      <div class="row noMarg">
+        <div class="col-9 text-center">
+          <h3 class="text-center">Tabla de películas</h3>
         </div>
-        <article class="table-responsive mt-5">
-            <table class="table" id="tablaPeliculas">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col" class="text-center">Código</th>
-                        <th scope="col" class="text-center">Nombre</th>
-                        <th scope="col" class="text-center">Categoría</th>
-                        <th scope="col" class="text-center">Descripción</th>
-                        <th scope="col" class="text-center">Imagen</th>
-                        <th scope="col" class="text-center">Publicado</th>
-                        <th scope="col" class="text-center">Opciones</th>
-                    </tr>
-                </thead>
-                <tbody id="listaPeliculas">
-                  
-                </tbody>
-            </table>
-        </article>
-    </section>
-</main>
+        <div class="col-2 text-right noPadd">
+          <button class="btn btnAgregar" data-toggle="modal" data-target="#modalPelicula"
+            onclick="limpiarFormulario()"><i class="fas fa-upload pr-3"></i>Agregar</button>
+        </div>
+      </div>
+      <article class="table-responsive mt-5">
+        <table class="table" id="tablaPeliculas">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" class="text-center">Código</th>
+              <th scope="col" class="text-center">Nombre</th>
+              <th scope="col" class="text-center">Categoría</th>
+              <th scope="col" class="text-center">Descripción</th>
+              <th scope="col" class="text-center">Imagen</th>
+              <th scope="col" class="text-center">Publicado</th>
+              <th scope="col" class="text-center">Opciones</th>
+            </tr>
+          </thead>
+          <tbody id="listaPeliculas">
 
-<!-- Modal -->
-<div class="modal fade" id="modalPelicula" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content bg-dark">
+          </tbody>
+        </table>
+      </article>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalPelicula" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
         <div class="modal-header">
-            <h5 class="modal-title txtModAdmin" id="modalLabel">Agregar nueva película/serie</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"></span>
-            </button>
+          <h5 class="modal-title txtModAdmin" id="modalLabel">Agregar nueva película/serie</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
         </div>
         <div class="modal-body">
-            <form id="formAgregar" onsubmit="guardarDatos(event)">
-                <div class="form-group">
-                    <label class="txtModAdmin">Código</label>
-                    <input class="form-control" type="number" id="codigoAgregar" onblur="validaCampo(this)"
-                        placeholder="ej: 1">
-                </div>
-                <div class="form-group">
-                    <label class="txtModAdmin">Nombre</label>
-                    <input class="form-control" type="text" id="nombreAgregar" onblur="validaCampo(this)"
-                        placeholder="ej: Jurassic Park">
-                </div>
-                <div class="form-group">
-                    <label class="txtModAdmin">Categoria</label>
-                    <input class="form-control" type="text" id="categoriaAgregar"
-                        onblur="validaCampo(this)" placeholder="ej: Acción">
-                </div>
-                <div class="form-group">
-                    <label class="txtModAdmin">Descripción</label>
-                    <input class="form-control" type="text" id="descripcionAgregar"
-                        onblur="validaCampo(this)" placeholder="ej: Película de dinosaurios">
-                </div>
-                <div class="form-group">
-                    <label class="txtModAdmin">Imagen</label>
-                    <input class="form-control" type="text" id="imagenAgregar" onblur="validaCampo(this)"
-                        placeholder="ej: jurassic-park.jpg">
-                </div>
-                <button type="submit" class="btn btnFormulario">Agregar</button>
-            </form>
-        </div>
-        <div class="modal-footer ">
+          <form id="formAgregar" onsubmit="guardarDatos(event)">
+            <div class="form-group">
+              <label class="txtModAdmin">Código</label>
+              <input class="form-control" type="number" id="codigoAgregar" onblur="validaCampo(this)"
+                placeholder="ej: 1">
+            </div>
+            <div class="form-group">
+              <label class="txtModAdmin">Nombre</label>
+              <input class="form-control" type="text" id="nombreAgregar" onblur="validaCampo(this)"
+                placeholder="ej: Jurassic Park">
+            </div>
+            <div class="form-group">
+              <label class="txtModAdmin">Categoria</label>
+              <input class="form-control" type="text" id="categoriaAgregar" onblur="validaCampo(this)"
+                placeholder="ej: Acción">
+            </div>
+            <div class="form-group">
+              <label class="txtModAdmin">Descripción</label>
+              <input class="form-control" type="text" id="descripcionAgregar" onblur="validaCampo(this)"
+                placeholder="ej: Película de dinosaurios">
+            </div>
+            <div class="form-group">
+              <label class="txtModAdmin">Imagen</label>
+              <input class="form-control" type="text" id="imagenAgregar" onblur="validaCampo(this)"
+                placeholder="ej: jurassic-park.jpg">
+            </div>
+            <button type="submit" class="btn btnFormulario mt-3">Agregar</button>
+          </form>
+          <div class="m-2 text-right">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 
   <footer class="text-center py-3">
     <div class="container">
