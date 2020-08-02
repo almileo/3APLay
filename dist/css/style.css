@@ -18,18 +18,6 @@ footer {
   margin-top: 80px;
 }
 
-.redes {
-  font-size: 30px;
-  color: #ffffff;
-  opacity: 0.8;
-}
-
-.redes:hover {
-  color: #33322e;
-  font-size: 32px;
-  opacity: 1;
-}
-
 .noPadd {
   padding: 0;
 }
@@ -50,11 +38,11 @@ footer {
 .redes {
   font-size: 30px;
   color: #ffffff;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .redes:hover {
-  color: #252524;
+  color: #ffffff;
   font-size: 32px;
   opacity: 1;
 }
