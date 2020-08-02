@@ -72,20 +72,6 @@ module.exports = {
             filename: './admin.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/index.html',
-            minify: {
-                collapseWhitespace: true,
-                removeComments: true,
-                removeRedundantAttributes: true,
-                removeScriptTypeAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                useShortDoctype: true
-            },
-            inject: true,
-            chunks: ['admin'],
-            filename: './index.html'
-        }),
-        new HtmlWebpackPlugin({
             template: './src/contacto.html',
             minify: {
                 collapseWhitespace: true,

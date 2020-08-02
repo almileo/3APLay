@@ -101,55 +101,42 @@ function leerPeliculas() {
 }
 
 
-destacada();
+itemDestacado();
 
-function destacada() {
-  // LEER DATOS DE LS
+let peliculas = [];
+
+function itemDestacado() {
+
+  // VERIFICAR SI HAY DATOS EN LS
   if (localStorage.length > 0) {
-    let _peliculas = JSON.parse(localStorage.getItem("keyPelicula"));
+
+    // TRAER DATOS DE LS
+    let _peliculas = JSON.parse(localStorage.getItem('keyPelicula'));
     console.log(_peliculas);
-    
-    if (peliculas.length == 0) {
-      peliculas = _peliculas;
+
+    let itemDestacado = _peliculas.filter(function (item) {
+      return item.itemDestacado == true;
+    });
+
+    peliculas = itemDestacado;
+    if (peliculas != 0) {
+      // REEMPLAZAR DESTACADA
+      console.log(peliculas[0]);
+      let datosDestacada = document.getElementById('principal');
+      let codHTML = `<div class="col-sm-12 col-md-5 position-absolute my-4 px-4" id="datosDestacada">
+          <h2 class="display-3 fondoOscuro" id="tituloDestacada">${peliculas[0].nombre}</h2>
+          <p class="lead my-4 fondoOscuro d-none d-lg-block" id="descriptionDestacada">${peliculas[0].descripcion}</p>
+          <a href="error404.html" class="btn btn-destacada my-4 d-none d-lg-block"><i class="fas fa-play mr-3"></i>Reproducir</a>
+        </div>
+        <div>
+            <img src="img/destacadas/${peliculas[0].imagen}" id="imagenDestacada" class="w-100" alt="${peliculas[0].nombre}">
+        </div>`;
+  
+      datosDestacada.innerHTML = codHTML;
+
+    } else {
+      console.log("NO hay item destacado");
     }
   }
 }
-
-
-
-// let _peliculas = JSON.parse(localStorage.getItem('keyPelicula'));
-
-
-
-
-
-
-
-
-// let peliculas = [];
-
-
-// // peliculas = _peliculas;
-// // filtrarDestacada();
-
-// console.log(_peliculas)
-// console.log(peliculas)
-
-// FILTRAR LS
-// let itemDestacado = peliculas.filter(function (item) {
-//   return item.itemDestacado = true;
-// })
-
-// console.log(itemDestacado);
-
-
-
-// INSERTAR DESTACADA EN SLIDER
-// function insertarDestacadaSlider(peliculaDestacada) {
-//   console.log("desde dentro de insertarDestacadaSlider");
-//   console.log(peliculaDestacada);
-
-//   console.log(peliculaDestacada.nombre)
-
-// }
 
