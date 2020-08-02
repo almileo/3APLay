@@ -68,7 +68,7 @@ function usuario() {
 }
 
 // VALIDAR CONTRASEÑA
-let longitud = 8;
+const longitud = 8;
 function contrasenia() {
     if (contraseniaRegistro.value.length >= longitud) {
         contraseniaRegistro.className = "form-control is-valid";

@@ -21,7 +21,7 @@ function leerPeliculas() {
     let codHTML = "";
 
 
-    //Agrega Imagenes automaticamente en cada categoria 
+    //Agrega Imagenes automaticamente en cada categoria
     for (let i in listaPeliculasSeries) {
       switch (listaPeliculasSeries[i].categoria) {
         case "Accion":
@@ -160,8 +160,9 @@ function filtrar() {
     }
   }
   if (resultado.innerHTML == "") {
-    resultado.innerHTML += `<li class="list-group-item text-dark w-25">No encontramos esa película/serie</li>`
+    resultado.innerHTML += `<li class="list-group-item text-dark w-25">No encontramos esa peliucla/serie</li>`
   }
+
 }
 
 busqueda.addEventListener("keyup", filtrar);
