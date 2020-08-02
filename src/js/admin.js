@@ -13,12 +13,14 @@ let categoria = document.getElementById("categoriaAgregar");
 let descripcion = document.getElementById("descripcionAgregar");
 let imagen = document.getElementById("imagenAgregar");
 let modalPelicula = document.getElementById("modalPelicula");
-let peliculaExitente = false; //variable bandera en false es una peli nueva. Si es true es una peli a editar
+let peliculaExistente = false; //variable bandera en false es una peli nueva. Si es true es una peli a editar
 
 leerPeliculas();
 
-window.agregarPelicula = function () {
+window.agregarPelicula = function (event) {
+  event.preventDefault();
   console.log("Hola, funciono");
+
   //crear el objeto
   let objetoPelicula = new Pelicula(
     codigo.value,
@@ -27,6 +29,7 @@ window.agregarPelicula = function () {
     descripcion.value,
     imagen.value
   );
+
   console.log(objetoPelicula);
 
   //guardo en el Array
@@ -61,6 +64,7 @@ window.validaCampo = function (input) {
 };
 
 function leerPeliculas() {
+
   //lee datos del LocalStorage
   if (localStorage.length > 0) {
     let _peliculas = JSON.parse(localStorage.getItem("keyPelicula"));
@@ -68,6 +72,7 @@ function leerPeliculas() {
     if (peliculas.length == 0) {
       peliculas = _peliculas;
     }
+
     //borrar filas
     borrarFila();
 
@@ -83,7 +88,7 @@ function dibujarFila(_peliculas) {
   for (let i in _peliculas) {
     if (_peliculas[i].itemDestacado == true) {
 
-      console.log("desde dentro de PELICULA DESTACADA TRUE")
+      console.log("desde dentro de PELICULA DESTACADA TRUE");
       codHTML = `<tr class="txtPagAdmin">
         <th scope="row">${_peliculas[i].codigo}</th>
         <td>${_peliculas[i].nombre}</td>
@@ -97,8 +102,6 @@ function dibujarFila(_peliculas) {
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
-      console.log(_peliculas[i])
-      insertarDestacadaSlider(_peliculas[i]);
 
     } else {
 
@@ -122,57 +125,33 @@ function dibujarFila(_peliculas) {
   }
 }
 
+
 // SELECCION DE PELICULA DESTACADA (CLICK)
 window.peliculaDestacada = function (codigo) {
   console.log("desde dentro de peliculaDestacada");
   console.log(codigo);
 
+  // PELICULA SELECCIONADA
   peliculaSeleccionada(codigo);
 
   // LEER FILAS
   leerPeliculas();
 }
 
-// INSERTAR DESTACADA EN SLIDER
-function insertarDestacadaSlider(peliculaDestacada) {
-  console.log("desde dentro de insertarDestacadaSlider");
-  console.log(peliculaDestacada);
-
-  console.log(peliculaDestacada.nombre)
-  // let div = document.getElementById("peliculaPrincipal");
-  // let codHTML = "";
-  let prueba = document.getElementById("tituloDestacadaUno");
-  console.log(prueba)
-  // tituloDestacadaUno.innerText = `Jo`;
-
-
-  // codHTML = `<h2 class="display-3 fondoOscuro" id="tituloDestacadaUno">${peliculaDestacada.nombre}</h2>`;
-  // document.getElementById('descriptionDestacadaUno').innerHTML = `<p class="lead my-4 fondoOscuro d-none d-md-block" id="descriptionDestacadaUno">La serie chilena de Amazon inspirada en el caso de "La Manada".</p>`;
-  // document.getElementById('descriptionDestacadaUno').innerHTML = `<a href="error404.html" class="btn btn-slider my-4 d-none d-md-block"><i class="fas fa-play mr-3"></i>Reproducir</a>`;
-
-  // div.innerHTML += codHTML;
-}
-
-
 // FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
 function peliculaSeleccionada(codigo) {
   console.log("dentro de pelicula seleccionada");
 
-  let objetoEncontrado = peliculas.find(function (objetoPeli) {
-    return objetoPeli.codigo == codigo;
-  });
-
-  console.log(objetoEncontrado.itemDestacado);
-
-  if (objetoEncontrado.itemDestacado == false) {
-    objetoEncontrado.itemDestacado = true;
-  } else {
-    objetoEncontrado.itemDestacado = false;
+  // GUARDAR CODIGO DE DESTACADO EN LS
+  for (let i in peliculas) {
+    if (peliculas[i].codigo == codigo && peliculas[i].itemDestacado == false) {
+      peliculas[i].itemDestacado = true;
+    } else {
+      peliculas[i].itemDestacado = false;
+    }
   }
 
   localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
-  console.log(objetoEncontrado.itemDestacado);
-  console.log(objetoEncontrado);
 }
 
 function borrarFila() {
@@ -217,6 +196,7 @@ window.eliminarPelicula = function (movie) {
 
 //funcion para editar peliculas
 window.editarPelicula = function (codigo) {
+
   //buscar pelicula por codigo
   let objetoEncontrado = peliculas.find(function (objetoPeli) {
     return objetoPeli.codigo == codigo;
@@ -234,7 +214,7 @@ window.editarPelicula = function (codigo) {
   document.getElementById("imagenAgregar").value = objetoEncontrado.imagen;
 
   //cambia valor variable bandera
-  peliculaExitente = true;
+  peliculaExistente = true;
 
   //abrir la ventana modal
   $(modalPelicula).modal("show");
@@ -250,20 +230,22 @@ window.guardarDatos = function (event) {
     validaCampo(descripcion) &&
     validaCampo(imagen)
   ) {
-    if (peliculaExitente == false) {
+    if (peliculaExistente == false) {
       //agrega una nueva peli
-      agregarPelicula();
+      agregarPelicula(event);
     } else {
       //modifica una peli que ya existe
-      peliculaEditada();
+      peliculaEditada(event);
     }
   } else {
     alert("No");
   }
 };
 
-function peliculaEditada() {
+function peliculaEditada(event) {
+  event.preventDefault()
   console.log("guardando pelicula editada");
+
   //tomar los nuevos datos
   codigo = document.getElementById("codigoAgregar").value;
   nombre = document.getElementById("nombreAgregar").value;
@@ -272,12 +254,14 @@ function peliculaEditada() {
   imagen = document.getElementById("imagenAgregar").value;
 
   //actualizar esos datos en el arreglo
+
+  console.log(peliculas)
   for (let i in peliculas) {
     if (peliculas[i].codigo == codigo) {
       peliculas[i].nombre = nombre;
       peliculas[i].categoria = categoria;
       peliculas[i].descripcion = descripcion;
-      peliculas[i].imagen = nombre;
+      peliculas[i].imagen = imagen;
     }
   }
 
@@ -295,5 +279,5 @@ function peliculaEditada() {
 
 window.limpiarFormulario = function () {
   document.getElementById("formAgregar").reset();
-  peliculaExitente = false;
+  peliculaExistente = false;
 };
