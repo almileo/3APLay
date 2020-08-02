@@ -5,7 +5,7 @@ body {
 
 .navbar,
 footer {
-  background-color: #00a8b1;
+  background-color:#212121;
 }
 
 #principal {
@@ -19,7 +19,7 @@ footer {
 }
 
 .fab:hover {
-  color: #33322e;
+  color: #00a8b1;
   font-size: 32px;
   opacity: 1;
 }
@@ -48,7 +48,7 @@ footer {
 }
 
 .fab:hover {
-  color: #252524;
+  color: #00A8B1;
   font-size: 32px;
   opacity: 1;
 }
