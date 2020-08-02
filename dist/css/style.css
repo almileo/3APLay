@@ -79,6 +79,15 @@ footer {
     box-shadow: 5px 6px 7px 0px #00A8B1;
 }
 
+/* LOGIN */
+#olvidasteContrasenia{
+  color: #00a8b1;
+}
+
+#olvidasteContrasenia:hover{
+  color: #ffffff;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 576px) {
   #tituloError {
