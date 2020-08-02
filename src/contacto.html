@@ -48,42 +48,62 @@
 
   <main class="container">
     <section id="principal">
-      <p class="py-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem itaque, nihil ab eos nesciunt
-        labore? Nemo
-        itaque, beatae et praesentium blanditiis dolorum corporis reiciendis ab accusamus hic quo consectetur at dolore
-        nobis fuga, necessitatibus culpa officia ex maiores! Eaque tempore error, at iusto ad sunt delectus facere
-        dolore iste a numquam accusamus recusandae? Quam quo blanditiis maiores consectetur veritatis consequatur vitae
-        distinctio veniam sint fugiat! Dicta fugiat cum praesentium, beatae sint a exercitationem quis laboriosam vel
-        rerum delectus quidem commodi nesciunt! Excepturi aperiam facilis quos blanditiis amet aliquam nihil quam
-        consequatur, at, earum, maiores rem fugit asperiores repellendus sed quibusdam nobis quia! Quas facilis,
-        laboriosam, sequi sit nobis, odio quae repudiandae veniam nesciunt porro perferendis at nam labore quibusdam ad!
-        Maiores quasi, veniam qui eaque exercitationem nobis similique fugit tempora id temporibus enim quibusdam
-        fugiat, aliquam incidunt laborum harum distinctio minus iure quis rem. Voluptatibus id commodi officia sequi
-        quidem dicta possimus. Ducimus, saepe? Assumenda quibusdam ipsa libero ea aliquid, officiis praesentium
-        voluptatibus blanditiis voluptatum non eius veritatis iure odit vel debitis iste ut repudiandae, rem vero,
-        recusandae optio necessitatibus aperiam exercitationem qui. Sit eveniet officia quae possimus repudiandae beatae
-        tempora perferendis harum velit molestias est voluptas nam eos inventore tempore accusantium, quasi deleniti
-        modi? Excepturi fugit delectus ad, soluta ipsum corrupti similique eaque ea mollitia, sit dolores ipsa
-        laboriosam hic modi minus, laborum quaerat optio. Consequuntur nisi dignissimos molestias assumenda quas eos
-        expedita dolore sint animi odio! Illum, magnam. Nostrum corporis voluptates ad cum ut. Perspiciatis nobis
-        praesentium quas accusantium, reiciendis dolor reprehenderit quos rem ipsam inventore placeat fuga eos, tenetur
-        facere minus error molestiae dicta corporis. Unde voluptatibus quo eaque soluta. Dolor quidem fugit commodi
-        quisquam reprehenderit suscipit ipsum, ipsam nostrum iusto impedit ut consequatur omnis facere fuga voluptatem
-        numquam laboriosam enim tempore reiciendis repellendus quo sint error pariatur ratione. Explicabo, accusantium
-        labore a voluptate accusamus, amet laudantium cumque ipsam, natus illum eius qui perferendis animi nihil? Quo
-        velit ut est laborum deserunt recusandae expedita porro placeat? Ut voluptatum esse perferendis facere ullam
-        repellendus, vitae, alias mollitia expedita nostrum dolore. Ad doloremque ea quaerat! Nostrum architecto quaerat
-        impedit facilis porro quidem at temporibus laudantium nam odio accusantium veritatis fugiat maxime dolor, sed
-        unde molestiae ex quia quod quae distinctio. Nulla illo esse beatae laborum molestiae consequuntur voluptate,
-        aspernatur, autem fuga nam odio aut facere incidunt hic rem eveniet, repellendus minus. Officiis tenetur
-        necessitatibus, molestiae voluptatibus laudantium ratione dolorem nemo quos accusantium impedit veniam nihil
-        eveniet totam? Accusamus corrupti dignissimos deserunt repellendus esse quaerat a, officiis labore earum dolor
-        facilis rem tenetur quidem voluptates, amet vitae sint tempore iusto ipsum ad porro? Ut itaque eligendi, facilis
-        dolor voluptates, sed cum maiores soluta rem repellendus nemo tempora sunt, minus voluptate? Vero nihil
-        asperiores, nemo dolor nesciunt possimus saepe illum et magnam laborum error doloribus odit necessitatibus quam
-        suscipit perferendis recusandae excepturi, obcaecati fuga. Quibusdam voluptatum culpa nostrum quam dolorem
-        praesentium itaque reiciendis at ad libero mollitia repellendus non obcaecati nesciunt dignissimos adipisci
-        saepe, voluptas tempore doloribus, tempora nemo corporis. Expedita!</p>
+      <h3 class="text-center pt-3">Contacto</h3>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <form id="formContacto" class="shadow" onsubmit="enviarContacto(event)">
+            <div class="rounded my-5 p-3">
+              <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" type="text" id="nombreContacto" placeholder="Ingrese su nombre">
+                <div class="valid-feedback">
+                  Perfecto!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, ingrese solamente letras.
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Apellido</label>
+                <input class="form-control" type="text" id="apellidoContacto" placeholder="Ingrese su apellido">
+                <div class="valid-feedback">
+                  Perfecto!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, ingrese solamente letras.
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="email" id="emailContacto" placeholder="ejemplo@gmail.com">
+                <div class="valid-feedback">
+                  Perfecto!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, ingrese un e-mail válido.
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Consulta</label>
+                <textarea class="form-control" rows="5" id="consultaContacto"
+                  placeholder="Agregue su consulta"></textarea>
+                <div class="valid-feedback">
+                  Perfecto!
+                </div>
+                <div class="invalid-feedback">
+                  La consulta debe contener como mínimo 20 caracteres.
+                </div>
+              </div>
+              <div class="text-center">
+                <button class="btn btnFormulario btn-block" type="submit">Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-12 col-md-6 text-dark py-5 text-center">
+          <img src="img/Homero-1.png" alt="contacto" class="img-fluid">
+        </div>
+      </div>
     </section>
   </main>
 
