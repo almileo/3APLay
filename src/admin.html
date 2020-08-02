@@ -49,7 +49,7 @@
     </nav>
   </header>
 
-  <main class="container noPadd position-relative ">
+  <main class="container noPadd position-relative arregloFooter">
     <section class="ubica">
         <div class="row noMarg">
             <div class="col-9 text-center">
@@ -98,26 +98,56 @@ aria-hidden="true">
                     <label class="txtModAdmin">Código</label>
                     <input class="form-control" type="number" id="codigoAgregar" onblur="validaCampo(this)"
                         placeholder="ej: 1">
+                    <div class="valid-feedback">
+                          Perfecto!
+                    </div>
+                    <div class="invalid-feedback">
+                          Por favor, ingrese solamente números.
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="txtModAdmin">Nombre</label>
                     <input class="form-control" type="text" id="nombreAgregar" onblur="validaCampo(this)"
                         placeholder="ej: Jurassic Park">
+                        <div class="valid-feedback">
+                          Perfecto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Por favor, complete este campo con el nombre de la película/serie.
+                        </div>
                 </div>
                 <div class="form-group">
                     <label class="txtModAdmin">Categoria</label>
                     <input class="form-control" type="text" id="categoriaAgregar"
                         onblur="validaCampo(this)" placeholder="ej: Acción">
+                        <div class="valid-feedback">
+                          Perfecto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Por favor, complete este campo con la categoria de la película/serie.
+                        </div>
                 </div>
                 <div class="form-group">
                     <label class="txtModAdmin">Descripción</label>
                     <input class="form-control" type="text" id="descripcionAgregar"
                         onblur="validaCampo(this)" placeholder="ej: Película de dinosaurios">
+                        <div class="valid-feedback">
+                          Perfecto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Por favor, complete este campo con una descripcion breve de la película/serie.
+                        </div>
                 </div>
                 <div class="form-group">
                     <label class="txtModAdmin">Imagen</label>
                     <input class="form-control" type="text" id="imagenAgregar" onblur="validaCampo(this)"
                         placeholder="ej: jurassic-park.jpg">
+                        <div class="valid-feedback">
+                          Perfecto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Por favor, complete este campo con el nombre de la imagen de la película/serie.
+                        </div>
                 </div>
                 <button type="submit" class="btn btnFormulario">Agregar</button>
             </form>

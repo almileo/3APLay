@@ -21,14 +21,15 @@ function leerPeliculas() {
     let codHTML = "";
 
 
-    //Imagenes 
+    //Agrega Imagenes automaticamente en cada categoria
     for (let i in listaPeliculasSeries) {
       switch (listaPeliculasSeries[i].categoria) {
         case "Accion":
           if (listaPeliculasSeries[i].codigo == 1 || listaPeliculasSeries[i].codigo == 2 || listaPeliculasSeries[i].codigo == 3 || listaPeliculasSeries[i].codigo == 4) {
             codHTML = ` <div class="col-sm-3 my-2">
                                     <a href="error404.html"><img src="img/categorias/accion/${listaPeliculasSeries[i].imagen}" class="d-block w-100 rounded efectosImg" alt="Spider-man de regreso a casa"></a>
-                                </div>`;
+                                </div>
+                                `;
 
             imagenesPeliculas.innerHTML += codHTML;
           }
@@ -131,12 +132,42 @@ function itemDestacado() {
         <div>
             <img src="img/destacadas/${peliculas[0].imagen}" id="imagenDestacada" class="w-100" alt="${peliculas[0].nombre}">
         </div>`;
-  
+
       datosDestacada.innerHTML = codHTML;
 
     } else {
       console.log("NO hay item destacado");
     }
   }
+}
+
+//Buscador de peliuclas/serie
+let listaPeliculasSeries = JSON.parse(localStorage.getItem("keyPelicula"));
+let busqueda = document.getElementById("buscador");
+
+let resultado = document.getElementById("resultados");
+
+function filtrar() {
+  resultado.innerHTML = "";
+  console.log(busqueda.value);
+  let texto = busqueda.value.toLowerCase();
+  for (let titulo of listaPeliculasSeries) {
+    let nombre = titulo.nombre.toLowerCase();
+    if (nombre.indexOf(texto) !== -1) {
+      resultado.innerHTML += `<a href="error404.html" class="list-group-item list-group-item-action w-25">${titulo.nombre}</a>`
+    }
+  }
+  if (resultado.innerHTML == "") {
+    resultado.innerHTML += `<li class="list-group-item text-dark w-25">No encontramos esa peliucla/serie</li>`
+  }
+
+}
+
+busqueda.addEventListener("keyup", filtrar);
+botonLimpiar.addEventListener("click", limpiarBusqueda);
+
+function limpiarBusqueda() {
+  resultado.innerHTML = "";
+
 }
 
