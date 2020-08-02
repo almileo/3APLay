@@ -12,13 +12,13 @@ footer {
   margin-top: 80px;
 }
 
-.fab {
+.redes {
   font-size: 30px;
   color: #ffffff;
   opacity: 0.8;
 }
 
-.fab:hover {
+.redes:hover {
   color: #33322e;
   font-size: 32px;
   opacity: 1;
@@ -41,13 +41,13 @@ footer {
 }
 
 /* REDES SOCIALES */
-.fab {
+.redes {
   font-size: 30px;
   color: #ffffff;
   opacity: 0.8;
 }
 
-.fab:hover {
+.redes:hover {
   color: #252524;
   font-size: 32px;
   opacity: 1;
@@ -105,7 +105,7 @@ footer {
     font-size: small;
   }
 
-  .fab {
+  .redes {
     font-size: 25px;
   }
 
