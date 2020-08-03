@@ -138,7 +138,7 @@ module.exports = {
                 useShortDoctype: true
             },
             inject: true,
-            chunks: ['detallePelicula'],
+            chunks: ['error404'],
             filename: './detallePelicula.html'
         }),
         new HtmlWebpackPlugin({
@@ -152,7 +152,7 @@ module.exports = {
                 useShortDoctype: true
             },
             inject: true,
-            chunks: ['acercaDeNosotros'],
+            chunks: ['error404'],
             filename: './acercaDeNosotros.html'
         }),
         new MiniCssExtractPlugin({
