@@ -52,7 +52,7 @@
   <main>
     <!-- DESTACADA -->
     <section id="principal">
-      <div class="col-sm-12 col-md-5 position-absolute my-4 px-4">
+      <!-- <div class="col-sm-12 col-md-5 position-absolute my-4 px-4">
         <h2 class="display-3 fondoOscuro">Bad Boys For Life</h2>
         <p class="lead my-4 fondoOscuro d-none d-lg-block">Mike y Marcus vuelven para
           enfrentarse a un cartel de drogas mexicano.</p>
@@ -62,12 +62,12 @@
       <div>
         <img src="img/destacadas/badboysforlife.jpeg" class="w-100" alt="Bad Boys por siempre">
       </div>
-      <form class="container d-flex" id="formBusqueda">
-        <input type="search" id="buscador" class="form-control w-50 my-2" placeholder="Buscá la pelicula o serie que quieras ver">
-        <button class="btn botonRepro m-2" id="botonLimpiar">Limpiar</button>
+      <form class="container d-flex mt-5" id="formBusqueda">
+        <input type="search" id="buscador" class="form-control w-50 my-2" onkeyup="filtrar()"  placeholder="Buscá la pelicula o serie que quieras ver">
+        <button class="btn botonRepro m-2" id="botonLimpiar" onclick="limpiarBusqueda()">Limpiar</button>
       </form>
       <ul id="resultados" class="list-group container">
-        <!-- <li class="list-group-item text-dark"><a href="error404.html">${titulo.nombre}</a></li> -->
+        <li class="list-group-item text-dark"><a href="error404.html">${titulo.nombre}</a></li>
       </ul> 
       <div>
         <label>Accion</label>
@@ -78,7 +78,7 @@
         <input type="checkbox" id="filtroCienciaFiccion" onclick="filtraCat(this)">
         <label>Terror</label>
         <input type="checkbox" id="filtroTerror" onclick="filtraCat(this)">  
-      </div>
+      </div> -->
        
     </section>
 
