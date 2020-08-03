@@ -124,6 +124,21 @@ footer {
     margin: auto;
   }
   
+  .tamanioTitulo {
+    font-size: 40px;
+  }
+
+  .tamanioSubtitulo {
+    font-size: 23px;
+  }
+
+  .tamanioTexto {
+    font-size: 16px;
+  }
+
+  .avatar {
+    width: 200px!important;
+  }
 }
 
 .txtModAdmin {
