@@ -1,10 +1,9 @@
-body {
+body, .modal-content {
   background-color: #33322e;
   color: #ffffff;
 }
 
-.navbar,
-footer {
+.navbar, footer {
   background-color:#212121;
 }
 
@@ -132,6 +131,10 @@ footer {
 
   .avatar {
     width: 200px!important;
+  }
+
+  #tituloAdmin {
+    font-size: 30px;
   }
 }
 
