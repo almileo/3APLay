@@ -19,7 +19,6 @@ leerPeliculas();
 
 window.agregarPelicula = function (event) {
   event.preventDefault();
-  console.log("Hola, funciono");
 
   //crear el objeto
   let objetoPelicula = new Pelicula(
@@ -29,8 +28,6 @@ window.agregarPelicula = function (event) {
     descripcion.value,
     imagen.value
   );
-
-  console.log(objetoPelicula);
 
   //guardo en el Array
   peliculas.push(objetoPelicula);
@@ -109,6 +106,7 @@ function leerPeliculas() {
 function dibujarFila(_peliculas) {
   let tbody = document.getElementById("listaPeliculas");
   let codHTML = "";
+  
   for (let i in _peliculas) {
     if (_peliculas[i].itemDestacado == true) {
 
@@ -149,14 +147,13 @@ function dibujarFila(_peliculas) {
 
     tbody.innerHTML += codHTML;
   }
+
+
 }
 
 
 // SELECCION DE PELICULA DESTACADA (CLICK)
 window.peliculaDestacada = function (codigo) {
-  console.log("desde dentro de peliculaDestacada");
-  console.log(codigo);
-
   // PELICULA SELECCIONADA
   peliculaSeleccionada(codigo);
 
@@ -166,8 +163,6 @@ window.peliculaDestacada = function (codigo) {
 
 // FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
 function peliculaSeleccionada(codigo) {
-  console.log("dentro de pelicula seleccionada");
-
   // GUARDAR CODIGO DE DESTACADO EN LS
   for (let i in peliculas) {
     if (peliculas[i].codigo == codigo && peliculas[i].itemDestacado == false) {
@@ -228,8 +223,6 @@ window.editarPelicula = function (codigo) {
     return objetoPeli.codigo == codigo;
   });
 
-  console.log(objetoEncontrado);
-
   //cargar el modal con los datos del objeto que quiero editar
   document.getElementById("codigoAgregar").value = objetoEncontrado.codigo;
   document.getElementById("nombreAgregar").value = objetoEncontrado.nombre;
@@ -268,8 +261,6 @@ window.guardarDatos = function (event) {
 
 function peliculaEditada(event) {
   event.preventDefault()
-  console.log("guardando pelicula editada");
-
   //tomar los nuevos datos
   codigo = document.getElementById("codigoAgregar").value;
   nombre = document.getElementById("nombreAgregar").value;
@@ -278,8 +269,6 @@ function peliculaEditada(event) {
   imagen = document.getElementById("imagenAgregar").value;
 
   //actualizar esos datos en el arreglo
-
-  console.log(peliculas)
   for (let i in peliculas) {
     if (peliculas[i].codigo == codigo) {
       peliculas[i].nombre = nombre;
@@ -315,9 +304,6 @@ window.limpiarFormulario = function () {
 //CheckBox publicar
 // SELECCION DE PELICULA publicada (CLICK)
 window.peliculaPublicada = function (codigo) {
-  // console.log("desde dentro de peliculaDestacada");
-  console.log(codigo);
-
   // PELICULA SELECCIONADA
   peliculaSeleccionadaPublicar(codigo);
 
@@ -327,8 +313,6 @@ window.peliculaPublicada = function (codigo) {
 
 // FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
 function peliculaSeleccionadaPublicar(codigo) {
-  // console.log("dentro de pelicula seleccionada");
-
   // GUARDAR CODIGO DE DESTACADO EN LS
   for (let i in peliculas) {
 
@@ -336,9 +320,7 @@ function peliculaSeleccionadaPublicar(codigo) {
       peliculas[i].publicado = false;
     } else {
       peliculas[i].publicado = true;
-    }
-    
-     
+    }    
   }
 
   localStorage.setItem("keyPelicula", JSON.stringify(peliculas));

@@ -98,10 +98,7 @@ function leerPeliculas() {
             break;
         }
 
-      }
-        
-      
-      
+      }      
     }
   }
 }
@@ -118,7 +115,6 @@ function itemDestacado() {
 
     // TRAER DATOS DE LS
     let _peliculas = JSON.parse(localStorage.getItem('keyPelicula'));
-    console.log(_peliculas);
 
     let itemDestacado = _peliculas.filter(function (item) {
       return item.itemDestacado == true;
@@ -147,9 +143,7 @@ function itemDestacado() {
 
       datosDestacada.innerHTML += codHTML;
 
-    } else {
-      console.log("NO hay item destacado");
-    }
+    } 
   }
 }
 
@@ -161,7 +155,6 @@ let resultado = document.getElementById("resultados");
 
 window.filtrar = function() {
   resultado.innerHTML = "";
-  console.log(busqueda.value);
   let texto = busqueda.value.toLowerCase();
   for (let titulo of listaPeliculasSeries){
     let nombre = titulo.nombre.toLowerCase();
