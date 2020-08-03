@@ -96,28 +96,53 @@
           <form id="formAgregar" onsubmit="guardarDatos(event)">
             <div class="form-group">
               <label class="txtModAdmin">Código</label>
-              <input class="form-control" type="number" id="codigoAgregar" onblur="validaCampo(this)"
-                placeholder="ej: 1">
+              <input class="form-control" type="number" id="codigoAgregar" onblur="validaCodigo(this)" placeholder="ej: 1" required>
+              <div class="valid-feedback">
+                Perfecto!
+              </div>
+              <div class="invalid-feedback">
+                Introduce un código válido.
+              </div>
             </div>
             <div class="form-group">
               <label class="txtModAdmin">Nombre</label>
-              <input class="form-control" type="text" id="nombreAgregar" onblur="validaCampo(this)"
-                placeholder="ej: Jurassic Park">
+              <input class="form-control" type="text" id="nombreAgregar" onblur="validaTexto(this)" placeholder="ej: Jurassic Park" required>
+              <div class="valid-feedback">
+                Perfecto!
+              </div>
+              <div class="invalid-feedback">
+                Ingrese un nombre válido.
+              </div>
             </div>
             <div class="form-group">
-              <label class="txtModAdmin">Categoria</label>
-              <input class="form-control" type="text" id="categoriaAgregar" onblur="validaCampo(this)"
-                placeholder="ej: Acción">
+              <label class="txtModAdmin">Categoría</label>
+              <input class="form-control" type="text" id="categoriaAgregar" onblur="validaTexto(this)" placeholder="ej: Acción" required>
+              <div class="valid-feedback">
+                Perfecto!
+              </div>
+              <div class="invalid-feedback">
+                Ingrese una categoría válida.
+              </div>
             </div>
             <div class="form-group">
               <label class="txtModAdmin">Descripción</label>
-              <input class="form-control" type="text" id="descripcionAgregar" onblur="validaCampo(this)"
-                placeholder="ej: Película de dinosaurios">
+              <input class="form-control" type="text" id="descripcionAgregar" onblur="validaTexto(this)" placeholder="ej: Película de dinosaurios" required>
+              <div class="valid-feedback">
+                Perfecto!
+              </div>
+              <div class="invalid-feedback">
+                Ingrese una descripción válida.
+              </div>
             </div>
             <div class="form-group">
               <label class="txtModAdmin">Imagen</label>
-              <input class="form-control" type="text" id="imagenAgregar" onblur="validaCampo(this)"
-                placeholder="ej: jurassic-park.jpg">
+              <input class="form-control" type="text" id="imagenAgregar" onblur="validaImagen(this)" placeholder="ej: jurassic-park.jpg" required>
+                <div class="valid-feedback">
+                  Perfecto!
+              </div>
+              <div class="invalid-feedback">
+                  Formato incorrecto.
+              </div>
             </div>
             <button type="submit" class="btn btnFormulario mt-3">Agregar</button>
           </form>
