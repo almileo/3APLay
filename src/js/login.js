@@ -53,10 +53,7 @@ window.admin = function (event) {
     event.preventDefault();
     if (usuario() &&
         password()) {
-        console.log("OK");
         validarCuentaAdmin(event);
-    } else {
-        console.log("ERROR!");
     }
 }
 
@@ -64,16 +61,13 @@ window.admin = function (event) {
 window.recuperoEmail = function (event) {
     event.preventDefault();
     if (recEmail()) {
-        console.log("email OK")
         let modalRecuperoContrasenia = document.getElementById('modalRecuperoContrasenia');
         Swal.fire(
             'Perfecto!',
             'Tus datos se enviaron correctamente!',
             'success'
-            );
-            $(modalRecuperoContrasenia).modal('hide');
-        } else {
-        console.log("email NO OK")
+        );
+        $(modalRecuperoContrasenia).modal('hide');
     }
 }
 

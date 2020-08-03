@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css';
-import { contains } from 'jquery';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
 
@@ -71,10 +70,7 @@ window.enviarContacto = function (event) {
         emailContacto() &&
         consultaContacto()
     ) {
-        console.log("OK");
         enviarMail();
-    } else {
-        console.log("ERROR!");
     }
 };
 
@@ -93,7 +89,6 @@ function enviarMail() {
     emailjs.send(service_id, template_id, template_params, (function () {
         emailjs.init("user_ZWC2NMhaitYaXnaca2pUa");
     })()).then(function (response) {
-        console.log(response);
         document.getElementById('formContacto').reset();
         Swal.fire(
             'Perfecto!',
@@ -103,7 +98,6 @@ function enviarMail() {
     },
 
         function (error) {
-            console.log(error);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
