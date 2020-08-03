@@ -143,17 +143,7 @@ function itemDestacado() {
       </form>
       <ul id="resultados" class="list-group container">
         
-      </ul> 
-      <div class="container">
-        <label>Accion</label>
-        <input type="checkbox" id="filtroAccion" onclick="filtraCat(this)">  
-        <label>Comedia</label>
-        <input type="checkbox" id="filtroComedia" onclick="filtraCat(this)">
-        <label>Ciencia Ficcion</label>
-        <input type="checkbox" id="filtroCienciaFiccion" onclick="filtraCat(this)">
-        <label>Terror</label>
-        <input type="checkbox" id="filtroTerror" onclick="filtraCat(this)">  
-      </div>`;
+      </ul> `;
 
       datosDestacada.innerHTML += codHTML;
 
