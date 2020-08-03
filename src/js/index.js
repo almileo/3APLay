@@ -23,8 +23,8 @@ function leerPeliculas() {
     //Agrega Imagenes automaticamente en cada categoria 
     for (let i in listaPeliculasSeries) {
       if (listaPeliculasSeries[i].publicado == true) {
-        switch (listaPeliculasSeries[i].categoria) {
-          case "Accion":
+        switch (listaPeliculasSeries[i].categoria.toLowerCase()) {
+          case "accion":
             if (listaPeliculasSeries[i].codigo == 1 || listaPeliculasSeries[i].codigo == 2 || listaPeliculasSeries[i].codigo == 3 || listaPeliculasSeries[i].codigo == 4) {
               codHTML = ` <div class="col-sm-3 my-2">
                                       <a href="error404.html"><img src="img/categorias/accion/${listaPeliculasSeries[i].imagen}" class="d-block w-100 rounded efectosImg" alt="Spider-man de regreso a casa"></a>
@@ -43,7 +43,7 @@ function leerPeliculas() {
             }
             break;
 
-          case "Comedia":
+          case "comedia":
             if (listaPeliculasSeries[i].codigo == 9 || listaPeliculasSeries[i].codigo == 10 || listaPeliculasSeries[i].codigo == 11 || listaPeliculasSeries[i].codigo == 12) {
               codHTML = ` <div class="col-sm-3 my-2">
                                        <a href="error404.html"><img src="img/categorias/comedia/${listaPeliculasSeries[i].imagen}" class="d-block w-100 rounded efectosImg" alt="Ahora son trece"></a>
@@ -61,7 +61,7 @@ function leerPeliculas() {
             }
             break;
 
-          case "Ciencia Ficcion":
+          case "ciencia ficcion":
             if (listaPeliculasSeries[i].codigo == 17 || listaPeliculasSeries[i].codigo == 18 || listaPeliculasSeries[i].codigo == 19 || listaPeliculasSeries[i].codigo == 20) {
               codHTML = ` <div class="col-sm-3 my-2">
                                       <a href="error404.html"><img src="img/categorias/ficcion/${listaPeliculasSeries[i].imagen}" class="d-block w-100 rounded efectosImg" alt="Chappie"></a>
@@ -79,7 +79,7 @@ function leerPeliculas() {
             }
             break;
 
-          case "Terror":
+          case "terror":
             if (listaPeliculasSeries[i].codigo == 25 || listaPeliculasSeries[i].codigo == 26 || listaPeliculasSeries[i].codigo == 27 || listaPeliculasSeries[i].codigo == 28) {
               codHTML = ` <div class="col-sm-3 my-2">
               <a href="error404.html"><img src="img/categorias/terror/${listaPeliculasSeries[i].imagen}" class="d-block w-100 rounded efectosImg" alt="Dulce Venganza"></a>
