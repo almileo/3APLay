@@ -133,6 +133,10 @@ footer {
   .avatar {
     width: 200px!important;
   }
+
+  #tituloAdmin {
+    font-size: 30px;
+  }
 }
 
 .txtModAdmin {
