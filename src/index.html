@@ -8,7 +8,7 @@
   <meta name="author" content="Leonardo Almirón, José Antonio Burgos, Agustin Faciano, Javier Quevedo">
   <meta name="keywords" content="peliculas, streaming, pagina, videos, series">
   <meta name="description" content="Página de películas">
-  <link rel="icon" href="img/streaming.png">
+  <link rel="icon" href="img/tresAPlay.png">
   <script src="https://kit.fontawesome.com/867f1193c1.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,9 +16,8 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="img/streaming-difuminado.png" width="57"
-            class="d-inline-block align-center" alt="Logo" loading="lazy" title="Inicio">
-          3A Play!</a>
+        <a class="navbar-brand" href="index.html"><img src="img/tresAPlay.png" width="57" title="Inicio"
+          class="d-inline-block align-center mx-2" alt="Logo" loading="lazy" title="Inicio">3A Play!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -52,7 +51,7 @@
   <main>
     <!-- DESTACADA -->
     <section id="principal">
-      <div class="col-sm-12 col-md-5 position-absolute my-4 px-4">
+      <!-- <div class="col-sm-12 col-md-5 position-absolute my-4 px-4">
         <h2 class="display-3 fondoOscuro">Bad Boys For Life</h2>
         <p class="lead my-4 fondoOscuro d-none d-lg-block">Mike y Marcus vuelven para
           enfrentarse a un cartel de drogas mexicano.</p>
@@ -62,13 +61,24 @@
       <div>
         <img src="img/destacadas/badboysforlife.jpeg" class="w-100" alt="Bad Boys por siempre">
       </div>
-      <form class="container d-flex" id="formBusqueda">
-        <input type="search" id="buscador" class="form-control w-50 my-2" placeholder="Buscá la pelicula o serie que quieras ver">
-        <button class="btn botonRepro m-2" id="botonLimpiar">Limpiar</button>
+      <form class="container d-flex mt-5" id="formBusqueda">
+        <input type="search" id="buscador" class="form-control w-50 my-2" onkeyup="filtrar()"  placeholder="Buscá la pelicula o serie que quieras ver">
+        <button class="btn botonRepro m-2" id="botonLimpiar" onclick="limpiarBusqueda()">Limpiar</button>
       </form>
       <ul id="resultados" class="list-group container">
-        <!-- <li class="list-group-item text-dark"><a href="error404.html">${titulo.nombre}</a></li> -->
-      </ul>      
+        <li class="list-group-item text-dark"><a href="error404.html">${titulo.nombre}</a></li>
+      </ul> 
+      <div>
+        <label>Accion</label>
+        <input type="checkbox" id="filtroAccion" onclick="filtraCat(this)">  
+        <label>Comedia</label>
+        <input type="checkbox" id="filtroComedia" onclick="filtraCat(this)">
+        <label>Ciencia Ficcion</label>
+        <input type="checkbox" id="filtroCienciaFiccion" onclick="filtraCat(this)">
+        <label>Terror</label>
+        <input type="checkbox" id="filtroTerror" onclick="filtraCat(this)">  
+      </div> -->
+       
     </section>
 
     <!-- CATEGORIAS -->
@@ -279,10 +289,8 @@
 
   <footer class="text-center py-3 mt-4">
     <div class="container">
-      <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i
-          class="fab fa-facebook-square redes"></i></a>
-      <a href="https://www.instagram.com/" title="Instagram" target="_blank"><i
-          class="fab fa-instagram mx-2 redes"></i></a>
+      <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="fab fa-facebook-square redes"></i></a>
+      <a href="https://www.instagram.com/" title="Instagram" target="_blank"><i class="fab fa-instagram mx-2 redes"></i></a>
       <a href="https://twitter.com/" title="Twitter" target="_blank"><i class="fab fa-twitter-square redes"></i></a>
       <p class="lead mt-3 text-white">&copy; Todos los derechos reservados</p>
     </div>

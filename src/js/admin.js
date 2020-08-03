@@ -104,6 +104,7 @@ function leerPeliculas() {
   }
 }
 
+
 //funcion para crear la tabla
 function dibujarFila(_peliculas) {
   let tbody = document.getElementById("listaPeliculas");
@@ -118,8 +119,8 @@ function dibujarFila(_peliculas) {
         <td>${_peliculas[i].categoria}</td>
         <td>${_peliculas[i].descripcion}</td>
         <td>${_peliculas[i].imagen}</td>
-        <td class="text-center">Si</td>
-        <td class="text-center">
+        <td class="text-center"><input type="checkbox" id="${_peliculas[i].codigo}" onclick="peliculaPublicada(${_peliculas[i].codigo})"></td>
+        <td>
             <button class="btn btn-outline-primary" title="Editar" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
             <button class="btn btn-outline-warning my-1" title="Destacar" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
             <button class="btn btn-outline-danger" title="Eliminar" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
@@ -135,14 +136,14 @@ function dibujarFila(_peliculas) {
         <td>${_peliculas[i].categoria}</td>
         <td>${_peliculas[i].descripcion}</td>
         <td>${_peliculas[i].imagen}</td>
-        <td class="text-center">Si</td>
-        <td class="text-center">
-            <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-outline-secondary my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
-            <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
+        <td class="text-center"><input type="checkbox" id="${_peliculas[i].codigo}" onclick="peliculaPublicada(${_peliculas[i].codigo})"></td>
+        <td>
+            <button class="btn btn-outline-primary" title="Editar" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-outline-secondary my-1" title="Destacar" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-danger" title="Eliminar" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
-    }
+    }  
 
     tbody.innerHTML += codHTML;
   }
@@ -259,7 +260,7 @@ window.guardarDatos = function (event) {
       peliculaEditada(event);
     }
   } else {
-    console.log("ERROR!");
+    alert("Te faltan completar algunos datos");
   }
 };
 
@@ -307,3 +308,37 @@ window.limpiarFormulario = function () {
   imagen.className = 'form-control';
   peliculaExistente = false;
 };
+
+
+//CheckBox publicar
+// SELECCION DE PELICULA publicada (CLICK)
+window.peliculaPublicada = function (codigo) {
+  // console.log("desde dentro de peliculaDestacada");
+  console.log(codigo);
+
+  // PELICULA SELECCIONADA
+  peliculaSeleccionadaPublicar(codigo);
+
+  // LEER FILAS
+  leerPeliculas();
+}
+
+// FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
+function peliculaSeleccionadaPublicar(codigo) {
+  // console.log("dentro de pelicula seleccionada");
+
+  // GUARDAR CODIGO DE DESTACADO EN LS
+  for (let i in peliculas) {
+
+    if ((peliculas[i].codigo == codigo && peliculas[i].publicado == true)) {
+      peliculas[i].publicado = false;
+    } else {
+      peliculas[i].publicado = true;
+    }     
+  }
+
+  localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
+}
+
+
+
