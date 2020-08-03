@@ -1,27 +1,14 @@
-body {
+body, .modal-content {
   background-color: #33322e;
   color: #ffffff;
 }
 
-.navbar,
-footer {
-  background-color: #00a8b1;
+.navbar, footer {
+  background-color:#212121;
 }
 
 #principal {
   margin-top: 80px;
-}
-
-.fab {
-  font-size: 30px;
-  color: #ffffff;
-  opacity: 0.8;
-}
-
-.fab:hover {
-  color: #33322e;
-  font-size: 32px;
-  opacity: 1;
 }
 
 .noPadd {
@@ -41,34 +28,40 @@ footer {
 }
 
 /* REDES SOCIALES */
-.fab {
+.redes {
   font-size: 30px;
   color: #ffffff;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
-.fab:hover {
-  color: #252524;
+.redes:hover {
+  color: #ffffff;
   font-size: 32px;
   opacity: 1;
 }
 
-/* SLIDER */
+/* DESTACADA */
 .fondoOscuro {
   text-shadow: 0 0 5px #0f0f0f, 0 0 10px #0f0f0f, 0 0 20px #0f0f0f,
     0 0 40px #0f0f0f, 0 0 80px #0f0f0f, 0 0 90px #0f0f0f, 0 0 100px #0f0f0f,
     0 0 150px #0f0f0f;
 }
 
-.btn-slider, .btnFormulario {
+.btn-destacada, .btnFormulario {
     background-color: #00a8b1;
     color: white;
     width: 150px;
     height: 40px;
 }
 
-.btn-slider:hover {
+.btn-destacada:hover {
   color: #33322e;
+}
+
+.btnAgregar {
+    border: 2px solid #00a8b1;
+    background-color: #00a8b1;
+    color: #ffffff;
 }
 
 /* IMAGENES */
@@ -85,6 +78,15 @@ footer {
     box-shadow: 5px 6px 7px 0px #00A8B1;
 }
 
+/* LOGIN */
+#olvidasteContrasenia, #terminos{
+  color: #00a8b1;
+}
+
+#olvidasteContrasenia:hover{
+  color: #ffffff;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 576px) {
   #tituloError {
@@ -97,7 +99,7 @@ footer {
     margin-bottom: 0;
   }
 
-  .btn-slider {
+  .btn-destacada {
     font-size: 10px;
   }
 
@@ -105,7 +107,7 @@ footer {
     font-size: small;
   }
 
-  .fab {
+  .redes {
     font-size: 25px;
   }
 
@@ -115,10 +117,29 @@ footer {
     margin: auto;
   }
   
+  .tamanioTitulo {
+    font-size: 40px;
+  }
+
+  .tamanioSubtitulo {
+    font-size: 23px;
+  }
+
+  .tamanioTexto {
+    font-size: 16px;
+  }
+
+  .avatar {
+    width: 200px!important;
+  }
+
+  #tituloAdmin {
+    font-size: 30px;
+  }
 }
 
 .txtModAdmin {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .botonRepro {
@@ -155,4 +176,10 @@ footer {
 }.avatar{
   border-radius: 50%;
 }
+
+.arregloFooter {
+  min-height: calc(100vh - 84px - 126px);
+}
+
+
 

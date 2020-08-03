@@ -8,7 +8,7 @@
   <meta name="author" content="Leonardo Almirón, José Antonio Burgos, Agustin Faciano, Javier Quevedo">
   <meta name="keywords" content="peliculas, streaming, pagina, videos, series">
   <meta name="description" content="Página de películas">
-  <link rel="icon" href="img/streaming.png">
+  <link rel="icon" href="img/tresAPlay.png">
   <script src="https://kit.fontawesome.com/867f1193c1.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,9 +16,8 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="img/streaming-difuminado.png" width="57"
-            class="d-inline-block align-center" alt="Logo" loading="lazy" title="Inicio">
-          3A Play!</a>
+        <a class="navbar-brand" href="index.html"><img src="img/tresAPlay.png" width="57" title="Inicio"
+            class="d-inline-block align-center mx-2" alt="Logo" loading="lazy" title="Inicio">3A Play!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -50,61 +49,8 @@
   </header>
 
   <main>
-    <!-- SLIDER -->
+    <!-- DESTACADA -->
     <section id="principal">
-      <div id="peliculasDestacadas" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#peliculasDestacadas" data-slide-to="0" class="active"></li>
-          <li data-target="#peliculasDestacadas" data-slide-to="1"></li>
-          <li data-target="#peliculasDestacadas" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="col-sm-12 col-md-5 position-absolute container m-5" id="peliculaPrincipal">
-              <h2 class="display-3 fondoOscuro" id="tituloDestacadaUno">La Jauría</h2>
-              <p class="lead my-4 fondoOscuro d-none d-md-block" id="descriptionDestacadaUno">La serie chilena de Amazon inspirada en el caso de "La
-                Manada".</p>
-              <a href="error404.html" class="btn btn-slider my-4 d-none d-md-block"><i class="fas fa-play mr-3"></i>Reproducir</a>
-            </div>
-            <div>
-              <img src="img/lajauria.jpg" id="imagenDestacadaUno" class="d-block w-100" alt="La Jauría">
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-sm-12 col-md-5 position-absolute container m-5">
-              <h2 class="display-3 fondoOscuro" id="tituloDestacadaDos">Sugar Rush</h2>
-              <p class="lead my-4 fondoOscuro d-none d-md-block" id="descriptionDestacadaDos">Una competencia con un ingrediente que siempre falta:
-                el tiempo.</p>
-              <a href="error404.html" class="btn btn-slider my-4 d-none d-md-block"><i class="fas fa-play mr-3"></i>Reproducir</a>
-            </div>
-            <div>
-              <img src="img/sugarrush.jpg" id="imagenDestacadaDos" class="d-block w-100" alt="Sugar Rush">
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-sm-12 col-md-6 position-absolute container m-5">
-              <h2 class="display-3 fondoOscuro" id="tituloDestacadaTres">Bad Boys <span class="display-4 titulo">For Life</span></h2>
-              <p class="lead my-4 fondoOscuro d-none d-md-block" id="descriptionDestacadaTres">Mike y Marcus vuelven para enfrentarse a un cartel de
-                drogas mexicano.</p>
-              <a href="error404.html" class="btn btn-slider my-4 d-none d-md-block"><i class="fas fa-play mr-3"></i>Reproducir</a>
-            </div>
-            <div>
-              <img src="img/badboysforlife.jpeg" id="imagenDestacadaTres" class="d-block w-100" alt="Bad Boys por siempre">
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
     </section>
 
     <!-- CATEGORIAS -->
@@ -114,35 +60,21 @@
         <div id="categoriaAccion" class="carousel slide" data-ride="carousel pause">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="d-flex">
+              <div class="d-flex" id="imagenesAccion">
                 <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/accion/spiderman-homecoming.jpg" class="d-block w-100 rounded efectosImg" alt="Spider-man de regreso a casa"></a>
+                  <a href="peliculas/robinhood.html"><img src="img/categorias/accion/robinhood.jpg"
+                      class="d-block w-100 rounded efectosImg" alt="robin hood"></a>
                 </div>
                 <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/accion/tirador.jpg" class="d-block w-100 rounded efectosImg" alt="El tirador"></a>
+                  <a href="peliculas/lamomiaii.html"><img src="img/categorias/accion/lamomiaregresa.jpg"
+                      class="d-block w-100 rounded efectosImg" alt="la momia regresa"></a>
                 </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/accion/robinhood.jpg" class="d-block w-100 rounded efectosImg" alt="Robin Hood"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/accion/lossietemagnificos.jpg" class="d-block w-100 rounded efectosImg" alt="Los 7 Magníficos"></a>
-                </div>
+
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex">
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/accion/lamomiaregresa.jpg" class="d-block w-100 rounded efectosImg" alt="La Momia regresa"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/accion/jackreacherbajolamira.jpg" class="d-block w-100 rounded efectosImg" alt="Jack Reacher bajo la mira"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/accion/elseniordelosanilloslasdostorres.jpg" class="d-block w-100 rounded efectosImg" alt="El Señor de los Anillos: Las dos torres"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/accion/cuatrohermanos.jpg" class="d-block w-100 rounded efectosImg" alt="Cuatro hermanos"></a>
-                </div>
+              <div class="d-flex" id="imagenesAccionDos">
+
               </div>
             </div>
           </div>
@@ -156,41 +88,26 @@
           </a>
         </div>
       </article>
-      
       <article class="my-4">
         <h5 class="container">Comedia</h5>
         <div id="categoriaComedia" class="carousel slide" data-ride="carousel pause">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="d-flex">
+              <div class="d-flex" id="imagenComedia">
                 <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/comedia/ahorasontrece.jpg" class="d-block w-100 rounded efectosImg" alt="Ahora son trece"></a>
+                  <a href="peliculas/volveralfuturo.html"><img src="img/categorias/comedia/volveralfuturo.jpg"
+                      class="d-block w-100 rounded efectosImg" alt="volver al futuro"></a>
                 </div>
                 <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/comedia/beverlyhillscopII.jpg" class="d-block w-100 rounded efectosImg" alt="Beverly Hills Cop II"></a>
+                  <a href="peliculas/forrestgump.html"><img src="img/categorias/comedia/forestgump.jpg"
+                      class="d-block w-100 rounded efectosImg" alt="forrest gump"></a>
                 </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/comedia/comoperderaunhombreendiezdias.jpg" class="d-block w-100 rounded efectosImg" alt="Como perder a un hombre en 10 días"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/comedia/forestgump.jpg" class="d-block w-100 rounded efectosImg" alt="Forest Gump"></a>
-                </div>
+
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex">
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/comedia/lastholiday.jpg" class="d-block w-100 rounded efectosImg" alt="Last holiday"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/comedia/ligeramenteembarazada.png" class="d-block w-100 rounded efectosImg" alt="Ligeramente embarazada"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/comedia/sienteelritmo.jpg" class="d-block w-100 rounded efectosImg" alt="Siente el ritmo"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/comedia/tressonmultitud.jpg" class="d-block w-100 rounded efectosImg" alt="Tres son multitud"></a>
-                </div>
+              <div class="d-flex" id="imagenComediaDos">
+
               </div>
             </div>
           </div>
@@ -204,41 +121,26 @@
           </a>
         </div>
       </article>
-      
       <article class="my-4">
         <h5 class="container">Ciencia ficción</h5>
         <div id="categoriaFiccion" class="carousel slide" data-ride="carousel pause">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="d-flex">
+              <div class="d-flex" id="imagenCienciaFiccion">
                 <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/ficcion/chappie.jpg" class="d-block w-100 rounded efectosImg" alt="Chappie"></a>
+                  <a href="peliculas/elhombredeacero.html"><img src="img/categorias/ficcion/supermann.png"
+                      class="d-block w-100 rounded efectosImg" alt="superman"></a>
                 </div>
                 <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/ficcion/enemigoinmortal.jpg" class="d-block w-100 rounded efectosImg" alt="Enemigo Mortal"></a>
+                  <a href="peliculas/godzilla.html"><img src="img/categorias/ficcion/godzilla.jpg"
+                      class="d-block w-100 rounded efectosImg" alt="godzilla"></a>
                 </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/ficcion/godzilla.jpg" class="d-block w-100 rounded efectosImg" alt="Godzilla"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/ficcion/juegodelhambresinsajo.jpg" class="d-block w-100 rounded efectosImg" alt="Juegos del hambre sinsajo"></a>
-                </div>
+
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex">
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/ficcion/losjuegosdelhambre.jpg" class="d-block w-100 rounded efectosImg" alt="Los juegos del hambre"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/ficcion/spidermantres.jpg" class="d-block w-100 rounded efectosImg" alt="Spider-man 3"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/ficcion/superman.png" class="d-block w-100 rounded efectosImg" alt="Superman"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/ficcion/supermanregresa.jpg" class="d-block w-100 rounded efectosImg" alt="Superman regresa"></a>
-                </div>
+              <div class="d-flex" id="imagenCienciaFiccionDos">
+
               </div>
             </div>
           </div>
@@ -252,41 +154,26 @@
           </a>
         </div>
       </article>
-      
       <article class="my-4">
         <h5 class="container">Terror</h5>
         <div id="categoriaTerror" class="carousel slide" data-ride="carousel pause">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="d-flex">
+              <div class="d-flex" id="imagenTerror">
                 <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/terror/dulcevenganza.jpg" class="d-block w-100 rounded efectosImg" alt="Dulce Venganza"></a>
+                  <a href="peliculas/guerramundialz.html"><img src="img/categorias/terror/guerramundialz.jpg"
+                      class="d-block w-100 rounded efectosImg" alt="guerra mundial z"></a>
                 </div>
                 <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/terror/elconjurodos.jpg" class="d-block w-100 rounded efectosImg" alt="El Conjuro 2"></a>
+                  <a href="peliculas/elexorcismodeemilyrose.html"><img src="img/categorias/terror/elexorcismodeemilyrose.png"
+                      class="d-block w-100 rounded efectosImg" alt="el exorcismo de emily rose"></a>
                 </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/terror/elexorcismodeemilyrose.png" class="d-block w-100 rounded efectosImg" alt="El exorcismo de Emily Rose"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/terror/eljuegodelmiedotres.jpg" class="d-block w-100 rounded efectosImg" alt="El juego del miedo 3"></a>
-                </div>
+
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex">
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/terror/entrevistaconunvampiro.jpg" class="d-block w-100 rounded efectosImg" alt="Entrevista con un vampiro"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/terror/guerramundialz.jpg" class="d-block w-100 rounded efectosImg" alt="Guerra mundial Z"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/terror/jigsaw.jpg" class="d-block w-100 rounded efectosImg" alt="Jig Saw"></a>
-                </div>
-                <div class="col-sm-3 my-2">
-                  <a href="error404.html"><img src="img/categorias/terror/raw.jpg" class="d-block w-100 rounded efectosImg" alt="Raw"></a>
-                </div>
+              <div class="d-flex" id="imagenTerrorDos">
+
               </div>
             </div>
           </div>
@@ -303,11 +190,13 @@
     </section>
   </main>
 
-  <footer class="text-center py-3">
+  <footer class="text-center py-3 mt-4">
     <div class="container">
-      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram mx-2"></i></a>
-      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+      <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i
+          class="fab fa-facebook-square redes"></i></a>
+      <a href="https://www.instagram.com/" title="Instagram" target="_blank"><i
+          class="fab fa-instagram mx-2 redes"></i></a>
+      <a href="https://twitter.com/" title="Twitter" target="_blank"><i class="fab fa-twitter-square redes"></i></a>
       <p class="lead mt-3 text-white">&copy; Todos los derechos reservados</p>
     </div>
   </footer>

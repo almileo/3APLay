@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css';
-import { contains } from 'jquery';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
 
@@ -68,7 +67,7 @@ function usuario() {
 }
 
 // VALIDAR CONTRASEÑA
-let longitud = 8;
+const longitud = 8;
 function contrasenia() {
     if (contraseniaRegistro.value.length >= longitud) {
         contraseniaRegistro.className = "form-control is-valid";
@@ -111,10 +110,7 @@ window.enviarRegistro = function (event) {
         contrasenia() &&
         repetirContrasenia() &&
         chkTerminos()) {
-        console.log("OK");
         enviarEmail();
-    } else {
-        console.log("ERROR!");
     }
 }
 
@@ -134,7 +130,6 @@ function enviarEmail() {
     emailjs.send(service_id, template_id, template_params, (function () {
         emailjs.init("user_ZWC2NMhaitYaXnaca2pUa");
     })()).then(function (response) {
-        console.log(response);
         document.getElementById('formRegistro').reset();
         Swal.fire(
             'Perfecto!',
@@ -144,11 +139,10 @@ function enviarEmail() {
     },
 
         function (error) {
-            console.log(error);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Algo sucedió! Prueba nuevamente en unos minutos.',
             })
         });
-}
+};

@@ -13,12 +13,13 @@ let categoria = document.getElementById("categoriaAgregar");
 let descripcion = document.getElementById("descripcionAgregar");
 let imagen = document.getElementById("imagenAgregar");
 let modalPelicula = document.getElementById("modalPelicula");
-let peliculaExitente = false; //variable bandera en false es una peli nueva. Si es true es una peli a editar
+let peliculaExistente = false; //variable bandera en false es una peli nueva. Si es true es una peli a editar
 
 leerPeliculas();
 
-window.agregarPelicula = function () {
-  console.log("Hola, funciono");
+window.agregarPelicula = function (event) {
+  event.preventDefault();
+
   //crear el objeto
   let objetoPelicula = new Pelicula(
     codigo.value,
@@ -27,7 +28,6 @@ window.agregarPelicula = function () {
     descripcion.value,
     imagen.value
   );
-  console.log(objetoPelicula);
 
   //guardo en el Array
   peliculas.push(objetoPelicula);
@@ -49,18 +49,42 @@ window.agregarPelicula = function () {
   )
 };
 
-//funcion que valida campos
-window.validaCampo = function (input) {
-  if (input.value == "") {
-    input.className = "form-control is-invalid";
-    return false;
-  } else {
-    input.className = "form-control is-valid";
+//funcion que valida código
+window.validaCodigo = function (codigo) {
+  let quitarEspacios = / /;
+  if (codigo.value != "" && !isNaN(codigo.value) && !quitarEspacios.test(codigo.value)) {
+    codigo.className = 'form-control is-valid';
     return true;
+  } else {
+    codigo.className = 'form-control is-invalid';
+    return false;
   }
-};
+}
+
+window.validaTexto = function (texto) {
+  if (texto.value != "" && isNaN(texto.value)) {
+    texto.className = "form-control is-valid";
+    return true;
+  } else {
+    texto.className = "form-control is-invalid";
+    return false;
+  }
+}
+
+window.validaImagen = function (nombreImagen) {
+  let quitarEspacios = / /;
+  let expresion = /[a-z]+\.+(jpeg|jpg|png)/;
+  if (isNaN(nombreImagen.value) && expresion.test(nombreImagen.value) && !quitarEspacios.test(nombreImagen.value)) {
+    nombreImagen.className = 'form-control is-valid';
+    return true;
+  } else {
+    nombreImagen.className = 'form-control is-invalid';
+    return false;
+  }
+}
 
 function leerPeliculas() {
+
   //lee datos del LocalStorage
   if (localStorage.length > 0) {
     let _peliculas = JSON.parse(localStorage.getItem("keyPelicula"));
@@ -68,6 +92,7 @@ function leerPeliculas() {
     if (peliculas.length == 0) {
       peliculas = _peliculas;
     }
+
     //borrar filas
     borrarFila();
 
@@ -76,103 +101,74 @@ function leerPeliculas() {
   }
 }
 
+
 //funcion para crear la tabla
 function dibujarFila(_peliculas) {
   let tbody = document.getElementById("listaPeliculas");
   let codHTML = "";
+  
   for (let i in _peliculas) {
     if (_peliculas[i].itemDestacado == true) {
 
-      console.log("desde dentro de PELICULA DESTACADA TRUE")
       codHTML = `<tr class="txtPagAdmin">
-        <th scope="row">${_peliculas[i].codigo}</th>
+        <th scope="row" class="text-center">${_peliculas[i].codigo}</th>
         <td>${_peliculas[i].nombre}</td>
         <td>${_peliculas[i].categoria}</td>
         <td>${_peliculas[i].descripcion}</td>
         <td>${_peliculas[i].imagen}</td>
-        <td>Si</td>
-        <td>
-            <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-outline-warning my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
-            <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
+        <td class="text-center"><input type="checkbox" id="${_peliculas[i].codigo}" onclick="peliculaPublicada(${_peliculas[i].codigo})"></td>
+        <td class="text-center">
+            <button class="btn btn-outline-primary" title="Editar" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-outline-warning my-1" title="Destacar" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-danger" title="Eliminar" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
-      console.log(_peliculas[i])
-      insertarDestacadaSlider(_peliculas[i]);
 
     } else {
 
-      console.log("desde dentro de PELICULA DESTACADA FALSE");
       codHTML = `<tr class="txtPagAdmin">
-        <th scope="row">${_peliculas[i].codigo}</th>
+        <th scope="row" class="text-center">${_peliculas[i].codigo}</th>
         <td>${_peliculas[i].nombre}</td>
         <td>${_peliculas[i].categoria}</td>
         <td>${_peliculas[i].descripcion}</td>
         <td>${_peliculas[i].imagen}</td>
-        <td>Si</td>
-        <td>
-            <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-outline-secondary my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
-            <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
+        <td class="text-center"><input type="checkbox" id="${_peliculas[i].codigo}" onclick="peliculaPublicada(${_peliculas[i].codigo})"></td>
+        <td class="text-center">
+            <button class="btn btn-outline-primary" title="Editar" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-outline-secondary my-1" title="Destacar" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-danger" title="Eliminar" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
-    }
+    }  
 
     tbody.innerHTML += codHTML;
   }
+
+
 }
+
 
 // SELECCION DE PELICULA DESTACADA (CLICK)
 window.peliculaDestacada = function (codigo) {
-  console.log("desde dentro de peliculaDestacada");
-  console.log(codigo);
-
+  // PELICULA SELECCIONADA
   peliculaSeleccionada(codigo);
 
   // LEER FILAS
   leerPeliculas();
 }
 
-// INSERTAR DESTACADA EN SLIDER
-function insertarDestacadaSlider(peliculaDestacada) {
-  console.log("desde dentro de insertarDestacadaSlider");
-  console.log(peliculaDestacada);
-
-  console.log(peliculaDestacada.nombre)
-  // let div = document.getElementById("peliculaPrincipal");
-  // let codHTML = "";
-  let prueba = document.getElementById("tituloDestacadaUno");
-  console.log(prueba)
-  // tituloDestacadaUno.innerText = `Jo`;
-
-
-  // codHTML = `<h2 class="display-3 fondoOscuro" id="tituloDestacadaUno">${peliculaDestacada.nombre}</h2>`;
-  // document.getElementById('descriptionDestacadaUno').innerHTML = `<p class="lead my-4 fondoOscuro d-none d-md-block" id="descriptionDestacadaUno">La serie chilena de Amazon inspirada en el caso de "La Manada".</p>`;
-  // document.getElementById('descriptionDestacadaUno').innerHTML = `<a href="error404.html" class="btn btn-slider my-4 d-none d-md-block"><i class="fas fa-play mr-3"></i>Reproducir</a>`;
-
-  // div.innerHTML += codHTML;
-}
-
-
 // FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
 function peliculaSeleccionada(codigo) {
-  console.log("dentro de pelicula seleccionada");
-
-  let objetoEncontrado = peliculas.find(function (objetoPeli) {
-    return objetoPeli.codigo == codigo;
-  });
-
-  console.log(objetoEncontrado.itemDestacado);
-
-  if (objetoEncontrado.itemDestacado == false) {
-    objetoEncontrado.itemDestacado = true;
-  } else {
-    objetoEncontrado.itemDestacado = false;
+  // GUARDAR CODIGO DE DESTACADO EN LS
+  for (let i in peliculas) {
+    if (peliculas[i].codigo == codigo && peliculas[i].itemDestacado == false) {
+      peliculas[i].itemDestacado = true;
+    } else {
+      peliculas[i].itemDestacado = false;
+    }
   }
 
   localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
-  console.log(objetoEncontrado.itemDestacado);
-  console.log(objetoEncontrado);
 }
 
 function borrarFila() {
@@ -204,8 +200,6 @@ window.eliminarPelicula = function (movie) {
       peliculas = arregloFiltrado;
       leerPeliculas();
 
-      console.log(arregloFiltrado);
-
       Swal.fire(
         'Pelicula/serie eliminada.',
         'El archivo fue eliminado con éxito.',
@@ -217,24 +211,21 @@ window.eliminarPelicula = function (movie) {
 
 //funcion para editar peliculas
 window.editarPelicula = function (codigo) {
+
   //buscar pelicula por codigo
   let objetoEncontrado = peliculas.find(function (objetoPeli) {
     return objetoPeli.codigo == codigo;
   });
 
-  console.log(objetoEncontrado);
-
   //cargar el modal con los datos del objeto que quiero editar
   document.getElementById("codigoAgregar").value = objetoEncontrado.codigo;
   document.getElementById("nombreAgregar").value = objetoEncontrado.nombre;
-  document.getElementById("categoriaAgregar").value =
-    objetoEncontrado.categoria;
-  document.getElementById("descripcionAgregar").value =
-    objetoEncontrado.descripcion;
+  document.getElementById("categoriaAgregar").value = objetoEncontrado.categoria;
+  document.getElementById("descripcionAgregar").value = objetoEncontrado.descripcion;
   document.getElementById("imagenAgregar").value = objetoEncontrado.imagen;
 
   //cambia valor variable bandera
-  peliculaExitente = true;
+  peliculaExistente = true;
 
   //abrir la ventana modal
   $(modalPelicula).modal("show");
@@ -244,26 +235,26 @@ window.guardarDatos = function (event) {
   event.preventDefault();
   //agrego validaciones
   if (
-    validaCampo(codigo) &&
-    validaCampo(nombre) &&
-    validaCampo(categoria) &&
-    validaCampo(descripcion) &&
-    validaCampo(imagen)
+    validaCodigo(codigo) &&
+    validaTexto(nombre) &&
+    validaTexto(categoria) &&
+    validaTexto(descripcion) &&
+    validaImagen(imagen)
   ) {
-    if (peliculaExitente == false) {
+    if (peliculaExistente == false) {
       //agrega una nueva peli
-      agregarPelicula();
+      agregarPelicula(event);
     } else {
       //modifica una peli que ya existe
-      peliculaEditada();
+      peliculaEditada(event);
     }
   } else {
-    alert("No");
+    alert("Te faltan completar algunos datos");
   }
 };
 
-function peliculaEditada() {
-  console.log("guardando pelicula editada");
+function peliculaEditada(event) {
+  event.preventDefault()
   //tomar los nuevos datos
   codigo = document.getElementById("codigoAgregar").value;
   nombre = document.getElementById("nombreAgregar").value;
@@ -277,7 +268,7 @@ function peliculaEditada() {
       peliculas[i].nombre = nombre;
       peliculas[i].categoria = categoria;
       peliculas[i].descripcion = descripcion;
-      peliculas[i].imagen = nombre;
+      peliculas[i].imagen = imagen;
     }
   }
 
@@ -295,5 +286,39 @@ function peliculaEditada() {
 
 window.limpiarFormulario = function () {
   document.getElementById("formAgregar").reset();
-  peliculaExitente = false;
+  codigo.className = 'form-control';
+  nombre.className = 'form-control';
+  categoria.className = 'form-control';
+  descripcion.className = 'form-control';
+  imagen.className = 'form-control';
+  peliculaExistente = false;
 };
+
+
+// CheckBox publicar
+// SELECCION DE PELICULA publicada (CLICK)
+window.peliculaPublicada = function (codigo) {
+  // PELICULA SELECCIONADA
+  peliculaSeleccionadaPublicar(codigo);
+
+  // LEER FILAS
+  leerPeliculas();
+}
+
+// FUNCION PARA ENCONTRAR PELICULA SELECCIONADA
+function peliculaSeleccionadaPublicar(codigo) {
+  // GUARDAR CODIGO DE DESTACADO EN LS
+  for (let i in peliculas) {
+
+    if ((peliculas[i].codigo == codigo && peliculas[i].publicado == true)) {
+      peliculas[i].publicado = false;
+    } else {
+      peliculas[i].publicado = true;
+    }    
+  }
+
+  localStorage.setItem("keyPelicula", JSON.stringify(peliculas));
+}
+
+
+
