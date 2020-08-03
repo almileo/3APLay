@@ -13,6 +13,12 @@ module.exports = {
         error404: './src/js/error404.js',
         detallePelicula: './src/js/detallePelicula.js',
         acercaDeNosotros: './src/js/acercaDeNosotros.js',
+        volveralfuturo: './src/js/error404.js',
+        robinhood: './src/js/error404.js',
+        godzilla: './src/js/error404.js',
+        guerramundialz: './src/js/error404.js',
+        badboysforlife: './src/js/error404.js',
+        forrestgump: './src/js/error404.js'
     },
     output: {
         filename: 'js/[name].js',
@@ -154,6 +160,90 @@ module.exports = {
             inject: true,
             chunks: ['error404'],
             filename: './acercaDeNosotros.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/peliculas/volveralfuturo.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
+            inject: true,
+            chunks: ['volveralfuturo'],
+            filename: './peliculas/volveralfuturo.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/peliculas/robinhood.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
+            inject: true,
+            chunks: ['robinhood'],
+            filename: './peliculas/robinhood.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/peliculas/godzilla.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
+            inject: true,
+            chunks: ['godzilla'],
+            filename: './peliculas/godzilla.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/peliculas/guerramundialz.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
+            inject: true,
+            chunks: ['guerramundialz'],
+            filename: './peliculas/guerramundialz.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/peliculas/badboysforlife.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
+            inject: true,
+            chunks: ['badboysforlife'],
+            filename: './peliculas/badboysforlife.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/peliculas/forrestgump.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
+            inject: true,
+            chunks: ['forrestgump'],
+            filename: './peliculas/forrestgump.html'
         }),
         new MiniCssExtractPlugin({
             filename: 'css/style.css'
