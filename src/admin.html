@@ -55,9 +55,10 @@
         <div class="col-9 text-center">
           <h3 class="text-center display-4 tamanioTitulo">Tabla de películas</h3>
         </div>
-        <div class="col-2 text-right noPadd">
-          <button class="btn btnAgregar" data-toggle="modal" data-target="#modalPelicula"
-            onclick="limpiarFormulario()"><i class="fas fa-upload"></i><span class="px-2">Agregar</span></button>
+        <div class="col-2 d-flex align-items-center">
+          <button class="btn btnAgregar" title="Agregar" data-toggle="modal" data-target="#modalPelicula"
+            onclick="limpiarFormulario()"><i class="fas fa-upload"></i><span
+              class="px-2 d-none d-sm-block">Agregar</span></button>
         </div>
       </div>
       <article class="table-responsive mt-5">
@@ -96,7 +97,8 @@
           <form id="formAgregar" onsubmit="guardarDatos(event)">
             <div class="form-group">
               <label class="txtModAdmin">Código</label>
-              <input class="form-control" type="number" id="codigoAgregar" onblur="validaCodigo(this)" placeholder="ej: 1" required>
+              <input class="form-control" type="number" id="codigoAgregar" onblur="validaCodigo(this)"
+                placeholder="ej: 1" required>
               <div class="valid-feedback">
                 Perfecto!
               </div>
@@ -106,7 +108,8 @@
             </div>
             <div class="form-group">
               <label class="txtModAdmin">Nombre</label>
-              <input class="form-control" type="text" id="nombreAgregar" onblur="validaTexto(this)" placeholder="ej: Jurassic Park" required>
+              <input class="form-control" type="text" id="nombreAgregar" onblur="validaTexto(this)"
+                placeholder="ej: Jurassic Park" required>
               <div class="valid-feedback">
                 Perfecto!
               </div>
@@ -116,7 +119,8 @@
             </div>
             <div class="form-group">
               <label class="txtModAdmin">Categoría</label>
-              <input class="form-control" type="text" id="categoriaAgregar" onblur="validaTexto(this)" placeholder="ej: Acción" required>
+              <input class="form-control" type="text" id="categoriaAgregar" onblur="validaTexto(this)"
+                placeholder="ej: Acción" required>
               <div class="valid-feedback">
                 Perfecto!
               </div>
@@ -126,7 +130,8 @@
             </div>
             <div class="form-group">
               <label class="txtModAdmin">Descripción</label>
-              <input class="form-control" type="text" id="descripcionAgregar" onblur="validaTexto(this)" placeholder="ej: Película de dinosaurios" required>
+              <input class="form-control" type="text" id="descripcionAgregar" onblur="validaTexto(this)"
+                placeholder="ej: Película de dinosaurios" required>
               <div class="valid-feedback">
                 Perfecto!
               </div>
@@ -136,12 +141,13 @@
             </div>
             <div class="form-group">
               <label class="txtModAdmin">Imagen</label>
-              <input class="form-control" type="text" id="imagenAgregar" onblur="validaImagen(this)" placeholder="ej: jurassic-park.jpg" required>
-                <div class="valid-feedback">
-                  Perfecto!
+              <input class="form-control" type="text" id="imagenAgregar" onblur="validaImagen(this)"
+                placeholder="ej: jurassic-park.jpg" required>
+              <div class="valid-feedback">
+                Perfecto!
               </div>
               <div class="invalid-feedback">
-                  Formato incorrecto.
+                Formato incorrecto.
               </div>
             </div>
             <button type="submit" class="btn btnFormulario mt-3">Agregar</button>
@@ -154,14 +160,16 @@
     </div>
   </div>
 
-<footer class="text-center py-3 mt-4">
-  <div class="container">
-    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square redes"></i></a>
-    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram mx-2 redes"></i></a>
-    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square redes"></i></a>
-    <p class="lead mt-3 text-white">&copy; Todos los derechos reservados</p>
-  </div>
-</footer>
+  <footer class="text-center py-3 mt-4">
+    <div class="container">
+      <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i
+          class="fab fa-facebook-square redes"></i></a>
+      <a href="https://www.instagram.com/" title="Instagram" target="_blank"><i
+          class="fab fa-instagram mx-2 redes"></i></a>
+      <a href="https://twitter.com/" title="Twitter" target="_blank"><i class="fab fa-twitter-square redes"></i></a>
+      <p class="lead mt-3 text-white">&copy; Todos los derechos reservados</p>
+    </div>
+  </footer>
 </body>
 
 </html>
