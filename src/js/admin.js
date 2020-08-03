@@ -119,14 +119,9 @@ function dibujarFila(_peliculas) {
         <td>${_peliculas[i].categoria}</td>
         <td>${_peliculas[i].descripcion}</td>
         <td>${_peliculas[i].imagen}</td>
-<<<<<<< HEAD
-        <td class="text-center">Si</td>
-        <td class="text-center">
-=======
         <td><input type="checkbox"  id="${_peliculas[i].codigo}" onclick="peliculaPublicada(${_peliculas[i].codigo})">
         </td>
         <td>
->>>>>>> devLeoCuatro
             <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
             <button class="btn btn-outline-warning my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
@@ -142,14 +137,9 @@ function dibujarFila(_peliculas) {
         <td>${_peliculas[i].categoria}</td>
         <td>${_peliculas[i].descripcion}</td>
         <td>${_peliculas[i].imagen}</td>
-<<<<<<< HEAD
-        <td class="text-center">Si</td>
-        <td class="text-center">
-=======
         <td><input type="checkbox"  id="${_peliculas[i].codigo}" onclick="peliculaPublicada(${_peliculas[i].codigo})">
         </td>
         <td>
->>>>>>> devLeoCuatro
             <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
             <button class="btn btn-outline-secondary my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
