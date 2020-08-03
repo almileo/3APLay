@@ -121,9 +121,9 @@ function dibujarFila(_peliculas) {
         <td>${_peliculas[i].imagen}</td>
         <td class="text-center"><input type="checkbox" id="${_peliculas[i].codigo}" onclick="peliculaPublicada(${_peliculas[i].codigo})"></td>
         <td>
-            <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-outline-warning my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
-            <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-outline-primary" title="Editar" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-outline-warning my-1" title="Destacar" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-danger" title="Eliminar" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
 
@@ -138,9 +138,9 @@ function dibujarFila(_peliculas) {
         <td>${_peliculas[i].imagen}</td>
         <td class="text-center"><input type="checkbox" id="${_peliculas[i].codigo}" onclick="peliculaPublicada(${_peliculas[i].codigo})"></td>
         <td>
-            <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-outline-secondary my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
-            <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-outline-primary" title="Editar" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-outline-secondary my-1" title="Destacar" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
+            <button class="btn btn-outline-danger" title="Eliminar" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
         </td>
     </tr>`;
     }  
