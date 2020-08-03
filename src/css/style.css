@@ -12,6 +12,21 @@ footer {
   margin-top: 80px;
 }
 
+<<<<<<< HEAD
+=======
+.redes {
+  font-size: 30px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.fab:hover {
+  color: #00a8b1;
+  font-size: 32px;
+  opacity: 1;
+}
+
+>>>>>>> devLeoCuatro
 .noPadd {
   padding: 0;
 }
@@ -35,8 +50,13 @@ footer {
   opacity: 0.7;
 }
 
+<<<<<<< HEAD
 .redes:hover {
   color: #ffffff;
+=======
+.fab:hover {
+  color: #00A8B1;
+>>>>>>> devLeoCuatro
   font-size: 32px;
   opacity: 1;
 }

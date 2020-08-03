@@ -158,9 +158,9 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
   !*** ./src/css/style.css ***!
   \***************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/style.css?");
+eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleBuildError: Module build failed (from ./node_modules/css-loader/dist/cjs.js):\\nCssSyntaxError\\n\\n(59:9) Unknown word\\n\\n \\u001b[90m 57 | \\u001b[39m\\u001b[33m.fab\\u001b[39m\\u001b[33m:\\u001b[39mhover \\u001b[33m{\\u001b[39m\\n \\u001b[90m 58 | \\u001b[39m  color\\u001b[33m:\\u001b[39m \\u001b[35m#00A8B1\\u001b[39m\\u001b[33m;\\u001b[39m\\n\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 59 | \\u001b[39m>>>>>>> devLeoCuatro\\n \\u001b[90m    | \\u001b[39m        \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\n \\u001b[90m 60 | \\u001b[39m  font-size\\u001b[33m:\\u001b[39m 32px\\u001b[33m;\\u001b[39m\\n \\u001b[90m 61 | \\u001b[39m  opacity\\u001b[33m:\\u001b[39m 1\\u001b[33m;\\u001b[39m\\n\\n    at C:\\\\Users\\\\Leona\\\\OneDrive\\\\Escritorio\\\\Desarrollador Web\\\\RollingCodeSchool\\\\3APlay\\\\node_modules\\\\webpack\\\\lib\\\\NormalModule.js:316:20\\n    at C:\\\\Users\\\\Leona\\\\OneDrive\\\\Escritorio\\\\Desarrollador Web\\\\RollingCodeSchool\\\\3APlay\\\\node_modules\\\\loader-runner\\\\lib\\\\LoaderRunner.js:367:11\\n    at C:\\\\Users\\\\Leona\\\\OneDrive\\\\Escritorio\\\\Desarrollador Web\\\\RollingCodeSchool\\\\3APlay\\\\node_modules\\\\loader-runner\\\\lib\\\\LoaderRunner.js:233:18\\n    at context.callback (C:\\\\Users\\\\Leona\\\\OneDrive\\\\Escritorio\\\\Desarrollador Web\\\\RollingCodeSchool\\\\3APlay\\\\node_modules\\\\loader-runner\\\\lib\\\\LoaderRunner.js:111:13)\\n    at C:\\\\Users\\\\Leona\\\\OneDrive\\\\Escritorio\\\\Desarrollador Web\\\\RollingCodeSchool\\\\3APlay\\\\node_modules\\\\css-loader\\\\dist\\\\index.js:141:5\\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\");\n\n//# sourceURL=webpack:///./src/css/style.css?");
 
 /***/ }),
 

@@ -6,6 +6,7 @@ export default class Pelicula{
         this.categoria = categoria;
         this.descripcion = descripcion;
         this.imagen = imagen;
+        this.publicado = false // false es que no esta publicado; true cuando se habilita
         this.itemDestacado = false; // false -> no está destacada; true -> está destacada
     }
 }
