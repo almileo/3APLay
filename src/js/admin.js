@@ -52,16 +52,39 @@ window.agregarPelicula = function (event) {
   )
 };
 
-//funcion que valida campos
-window.validaCampo = function (input) {
-  if (input.value == "") {
-    input.className = "form-control is-invalid";
-    return false;
-  } else {
-    input.className = "form-control is-valid";
+//funcion que valida código
+window.validaCodigo = function (codigo) {
+  let quitarEspacios = / /;
+  if (codigo.value != "" && !isNaN(codigo.value) && !quitarEspacios.test(codigo.value)) {
+    codigo.className = 'form-control is-valid';
     return true;
+  } else {
+    codigo.className = 'form-control is-invalid';
+    return false;
   }
-};
+}
+
+window.validaTexto = function (texto) {
+  if (texto.value != "" && isNaN(texto.value)) {
+    texto.className = "form-control is-valid";
+    return true;
+  } else {
+    texto.className = "form-control is-invalid";
+    return false;
+  }
+}
+
+window.validaImagen = function (nombreImagen) {
+  let quitarEspacios = / /;
+  let expresion = /[a-z]+\.+(jpeg|jpg|png)/;
+  if (isNaN(nombreImagen.value) && expresion.test(nombreImagen.value) && !quitarEspacios.test(nombreImagen.value)) {
+    nombreImagen.className = 'form-control is-valid';
+    return true;
+  } else {
+    nombreImagen.className = 'form-control is-invalid';
+    return false;
+  }
+}
 
 function leerPeliculas() {
 
@@ -90,13 +113,13 @@ function dibujarFila(_peliculas) {
 
       console.log("desde dentro de PELICULA DESTACADA TRUE");
       codHTML = `<tr class="txtPagAdmin">
-        <th scope="row">${_peliculas[i].codigo}</th>
+        <th scope="row" class="text-center">${_peliculas[i].codigo}</th>
         <td>${_peliculas[i].nombre}</td>
         <td>${_peliculas[i].categoria}</td>
         <td>${_peliculas[i].descripcion}</td>
         <td>${_peliculas[i].imagen}</td>
-        <td>Si</td>
-        <td>
+        <td class="text-center">Si</td>
+        <td class="text-center">
             <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
             <button class="btn btn-outline-warning my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
@@ -107,13 +130,13 @@ function dibujarFila(_peliculas) {
 
       console.log("desde dentro de PELICULA DESTACADA FALSE");
       codHTML = `<tr class="txtPagAdmin">
-        <th scope="row">${_peliculas[i].codigo}</th>
+        <th scope="row" class="text-center">${_peliculas[i].codigo}</th>
         <td>${_peliculas[i].nombre}</td>
         <td>${_peliculas[i].categoria}</td>
         <td>${_peliculas[i].descripcion}</td>
         <td>${_peliculas[i].imagen}</td>
-        <td>Si</td>
-        <td>
+        <td class="text-center">Si</td>
+        <td class="text-center">
             <button class="btn btn-outline-primary" onclick="editarPelicula(${_peliculas[i].codigo})" id="editar"><i class="fas fa-edit"></i></button>
             <button class="btn btn-outline-secondary my-1" onclick="peliculaDestacada(${_peliculas[i].codigo})" id="${_peliculas[i].codigo}"><i class="fas fa-star"></i></i></button>
             <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_peliculas[i].codigo}"><i class="fas fa-trash-alt"></i></button>
@@ -207,10 +230,8 @@ window.editarPelicula = function (codigo) {
   //cargar el modal con los datos del objeto que quiero editar
   document.getElementById("codigoAgregar").value = objetoEncontrado.codigo;
   document.getElementById("nombreAgregar").value = objetoEncontrado.nombre;
-  document.getElementById("categoriaAgregar").value =
-    objetoEncontrado.categoria;
-  document.getElementById("descripcionAgregar").value =
-    objetoEncontrado.descripcion;
+  document.getElementById("categoriaAgregar").value = objetoEncontrado.categoria;
+  document.getElementById("descripcionAgregar").value = objetoEncontrado.descripcion;
   document.getElementById("imagenAgregar").value = objetoEncontrado.imagen;
 
   //cambia valor variable bandera
@@ -224,11 +245,11 @@ window.guardarDatos = function (event) {
   event.preventDefault();
   //agrego validaciones
   if (
-    validaCampo(codigo) &&
-    validaCampo(nombre) &&
-    validaCampo(categoria) &&
-    validaCampo(descripcion) &&
-    validaCampo(imagen)
+    validaCodigo(codigo) &&
+    validaTexto(nombre) &&
+    validaTexto(categoria) &&
+    validaTexto(descripcion) &&
+    validaImagen(imagen)
   ) {
     if (peliculaExistente == false) {
       //agrega una nueva peli
@@ -238,7 +259,7 @@ window.guardarDatos = function (event) {
       peliculaEditada(event);
     }
   } else {
-    alert("No");
+    console.log("ERROR!");
   }
 };
 
@@ -279,5 +300,10 @@ function peliculaEditada(event) {
 
 window.limpiarFormulario = function () {
   document.getElementById("formAgregar").reset();
+  codigo.className = 'form-control';
+  nombre.className = 'form-control';
+  categoria.className = 'form-control';
+  descripcion.className = 'form-control';
+  imagen.className = 'form-control';
   peliculaExistente = false;
 };

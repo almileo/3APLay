@@ -59,6 +59,12 @@ footer {
   color: #33322e;
 }
 
+.btnAgregar {
+    border: 2px solid #00a8b1;
+    background-color: #00a8b1;
+    color: #ffffff;
+}
+
 /* IMAGENES */
 .efectosImg {
     opacity: 0.6;
